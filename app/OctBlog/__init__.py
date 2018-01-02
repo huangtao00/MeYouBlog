@@ -38,7 +38,8 @@ def create_app(config_name):
     app.register_blueprint(main_blueprint)
     app.register_blueprint(blog_admin_blueprint, url_prefix='/admin')
     app.register_blueprint(accounts_blueprint, url_prefix='/accounts')
-
     return app
 
-app = create_app(os.getenv('config') or 'default')
+
+if __name__=="__main__":
+    app = create_app(os.getenv('config') or 'default')

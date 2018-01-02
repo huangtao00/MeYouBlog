@@ -206,7 +206,7 @@ class Config(object):
     TESTING = False
 
     BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-
+    #we run manager.py, so the __file__=manager.py, so the base_dir is the path of manager.py
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'fjdljLJDL08_80jflKzcznv*c'
     MONGODB_SETTINGS = {'DB': 'OctBlog'}
 
@@ -216,10 +216,9 @@ class Config(object):
 
     if not os.path.exists(EXPORT_PATH):
         os.makedirs(EXPORT_PATH)
-
+    #print(BASE_DIR)
     REMEMBER_COOKIE_DURATION = datetime.timedelta(hours=3)
-
-
+    
     @staticmethod
     def init_app(app):
         pass
