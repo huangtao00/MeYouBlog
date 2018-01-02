@@ -50,7 +50,6 @@ def register(create_su=False):
         msg = 'Register is forbidden, please contact administrator'
         # return msg, 403
         abort(403, msg)
-    print(create_su)
     if create_su and not OctBlogSettings['allow_su_creation']:
         msg = 'Register superuser is forbidden, please contact administrator'
         # return msg, 403
