@@ -179,11 +179,11 @@ hr.small {
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 80px;
+    font-size: 40px;
   }
 }
 .intro-header .post-heading h1 {
-  font-size: 35px;
+  font-size: 25px;
 }
 .intro-header .post-heading .subheading,
 .intro-header .post-heading .meta {
@@ -192,7 +192,7 @@ hr.small {
 }
 .intro-header .post-heading .subheading {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, "STHeiti Light", "Microsoft YaHei", 'Hiragino Sans GB', 'SimHei', sans-serif;
-  font-size: 24px;
+  font-size: 15px;
   margin: 10px 0 30px;
   font-weight: 600;
 }
