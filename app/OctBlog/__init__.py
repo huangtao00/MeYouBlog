@@ -35,6 +35,7 @@ def create_app(config_name):
 
     from main.urls import main as main_blueprint, blog_admin as blog_admin_blueprint
     from accounts.urls import accounts as accounts_blueprint
+    
     app.register_blueprint(main_blueprint)
     app.register_blueprint(blog_admin_blueprint, url_prefix='/admin')
     app.register_blueprint(accounts_blueprint, url_prefix='/accounts')
