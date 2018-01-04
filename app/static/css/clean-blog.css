@@ -6,9 +6,10 @@
 
 body {
   /*font-family: 'Lora', 'Times New Roman', serif;*/
-  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "STHeiti Light", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "sans-serif","lucida grande", "lucida sans unicode", lucida, helvetica, "STHeiti Light", "Microsoft YaHei", "WenQuanYi Micro Hei";
   font-size: 18px;
   color: #404040;
+  background-color:#eee;
 }
 p {
   line-height: 1.7;
@@ -213,6 +214,10 @@ hr.small {
     font-size: 30px;
   }
 }
+.post-preview {
+ padding-bottom:-20px;
+ margin-bottom:-10px;
+}
 .post-preview > a {
   color: #404040;
 }
@@ -225,33 +230,64 @@ hr.small {
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 10px;
+  /*font-style:italic;*/
 }
+
 .post-preview > a > .post-subtitle {
   margin: 0;
   font-weight: 300;
   margin-bottom: 10px;
+
 }
+/*index page abstract style*/
+.post-preview > .post-subtitle {
+background-color:#f3f3fa;
+padding: 2px 5px 3px 5px;
+border-radius: 5px 5px;
+box-shadow: 1px 3px #777;
+}
+/*index page tag and category string */
 .post-preview > .post-meta {
-  color: #808080;
+  color: #000077;
   font-size: 18px;
-  font-style: italic;
+  font-style: normal;
+  font-weight:bold;
   margin-top: 0;
+  margin-bottom:-20px;
+  padding-bottom:-20px;
 }
 .post-preview > .post-meta > a {
   text-decoration: none;
-  color: #404040;
+  color: #770000;
+  margin-right:15px;
+  margin-left:-12px;
 }
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
   color: #0085a1;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
+}
+.post-preview > .post-author {
+text-align:right;
+
+}
+.post-preview > .post-author > a {
+text-decoration:none;
+color:#000077;
+}
+.caption > h3 > a:hover {
+text-decoration:none;
+}
+.caption > h3 > a {
+font-style: italic;
 }
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
     font-size: 36px;
+    /*font-style: italic;*/
   }
 }
-.section-heading {
+.section-heading {/*font-style: italic;*/
   font-size: 36px;
   margin-top: 60px;
   font-weight: 700;
@@ -259,12 +295,13 @@ hr.small {
 .caption {
   text-align: center;
   font-size: 14px;
-  padding: 10px;
-  font-style: italic;
+  padding: 5px;
+  /*font-style: italic;*/
   margin: 0;
   display: block;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+  border:20px;
 }
 footer {
   padding: 50px 0 65px;

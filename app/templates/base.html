@@ -37,9 +37,9 @@
     <!-- Custom CSS -->
     <link href="{{ url_for('static', filename='css/clean-blog.css') }}" rel="stylesheet">
     <!-- <link rel="stylesheet" href="//cdn.bootcss.com/startbootstrap-clean-blog/3.3.7/css/clean-blog.min.css"> -->
-    <link href="{{ url_for('static', filename='css/octblog.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/meyou.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.9.0/styles/default.min.css">
-
+  
     <link href="{{ url_for('main.recent_feed') }}"
       rel="alternate"
       title="Recent Changes" 
@@ -114,7 +114,22 @@
     </nav>
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    {%block header %}{% endblock %}
+    {%block header %}
+    <header class="intro-header" style="background-image: url({{ bg_home }})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>{{ blog_meta.name }}</h1>
+                        <hr class="small">
+                        <!-- we do not need rss below-->
+                        <span class="subheading">{{ blog_meta.subtitle }} <a href="{{ url_for('main.recent_feed') }}"><!-- <i class="glyphicon glyphicon-heart-empty"></i> --></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock %}
     <!-- Main Content -->
     {%block main %}{% endblock %}
     <!-- Footer -->
@@ -140,7 +155,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/flyhigher139/OctBlog" target="_blank">
+                            <a href="https://github.com/huangtao00" target="_blank">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -148,8 +163,8 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Oct Blog 2015</p>
-                    <p class="copyright text-muted"><a href="http://www.qiniu.com" target="_blank" ><img src="{{ qiniu }}"></a></p>
+                    <p class="copyright text-muted">Copyright &copy; MeYou`s Blog 2018</p>
+                    <p class="copyright text-muted"><a href="/accounts/login/" target="_blank" ><img src="{{ qiniu }}"></a></p>
                 </div>
             </div>
         </div>

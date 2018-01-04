@@ -19,8 +19,16 @@ manager.add_command("runserver", Server(
     use_debugger = True,
     use_reloader = True,
     host = '0.0.0.0',
-    port = 5002)
+    port = 5000)
 )
+@manager.command
+def live():
+    print ("in live function")
+    from livereload import Server
+    server = Server(app.wsgi_app)
+    server.watch("static/css/*.*")
+    server.watch("templates/*/*.*")
+    server.serve(open_url_delay=True)
 
 @manager.command
 def test():

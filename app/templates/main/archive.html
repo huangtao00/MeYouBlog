@@ -2,36 +2,30 @@
 
 {% block title %}{{ blog_meta.name }}{% endblock %}
 {% block header %}
-<header class="intro-header" style="background-image: url('http://7d9q7a.com1.z0.glb.clouddn.com/mayblog-home-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>{{ blog_meta.name }}</h1>
-                        <hr class="small">
-                        <span class="subheading">{{ blog_meta.subtitle }} <a href="{{ url_for('main.recent_feed') }}"><i class="fa fa-rss"></i></a></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+{{ super() }}
 {% endblock %}
 
 {% block main %}
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="col-lg-11  col-md-11 col-md-offset-1">
             <div class="row">
                 {% for post in posts.items %}
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
+                <div class="col-lg-5 col-sm-6 col-md-5" >
+                    <div class="thumbnail post-nav" >
                       <!-- <img src="..." alt="..."> -->
                       <div class="caption">
-                        <h3><a href="{{ url_for('main.post_detail', slug=post.slug) }}">{{ post.title }}</a></h3><hr>
-                        <p><strong>Abstract: </strong>{{ post.abstract }}</p>
-                        <p><strong>Author: </strong>{{ post.author }}</p>
-                        <p><strong>Date: </strong>{{ moment(post.pub_time).format('YYYY/MM/DD, h:mm a') }}</p>
+                        <h3><a href="{{ url_for('main.post_detail', slug=post.slug) }}">{{ post.title| title }}</a></h3>
                         
+                        <hr style="height:2px;border:none;border-top:2px dashed #0066CC;margin:5px 5px -25px 5px;" />
+                        <p class="post-author-title">
+                        作者：<span>{{ post.author }}</span>
+                        发表时间：{{ moment(post.pub_time).format('YYYY/MM/DD') }}<!--'YYYY/MM/DD-h:mm a' -->
+                        <br/>
+                         
+                        文章摘要：<span class="post-abstract" >{{ post.content_html[:200] |striptags + " ......" }}</span>
+                        
+                        </p>
                       </div>
                     </div>          
                 </div>

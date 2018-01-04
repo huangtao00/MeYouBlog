@@ -1,0 +1,52 @@
+.category-list{
+    border: 0px;
+}
+
+.group-list{
+    border: 0px;
+}
+
+.post-author-title  {
+text-align:left;
+font-size:15px;
+color:#000077;
+
+}        
+
+.post-author-title>span { 
+font-weight:bold;  
+font-size:16px;   
+text-align:left; 
+color:black;  
+padding-bottom:0px; 
+margin-bottom:0px; 
+
+} 
+span.post-abstract {
+font-size:15px;
+text-align:left;
+font-weight:normal; 
+font-family: 'SimHei',"SimSun", "Helvetica", "STHeiti Light", 'Hiragino Sans GB',  "sans-serif", "Arial", "Microsoft YaHei";
+/*font-style: italic;*/
+}  
+
+.post-nav {
+height:350px;
+box-shadow: 3px 7px #777;
+border-color:#ddd;
+border-radius:10px 20px;
+border-width:2px;
+background-color:#F9FFF2;
+}
+.post-content {
+
+/*height:350px;*/
+box-shadow: 3px 7px #777;
+border-color:#ddd;
+/*border-radius:3px 3px 10px 10px;*/
+border-width:10px;
+background-color:#FAFDFF;
+margin-top:10px;
+padding: 1px 10px 10px 10px;
+
+}

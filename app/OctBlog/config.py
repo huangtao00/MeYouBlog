@@ -62,17 +62,17 @@ OctBlogSettings = {
     },
     'copyright': {
         'display_copyright': os.environ.get('allow_display_copyright', 'true').lower() == 'true',
-        'copyright_msg': get_env_value('copyright_msg', '如果您要转载该文章，请联系本人')
+        'copyright_msg': get_env_value('copyright_msg', '如果您要转载该文章，请联系作者!')
     },
     'only_abstract_in_feed': os.environ.get('only_abstract_in_feed', 'false').lower() == 'true',
     'allow_share_article': os.environ.get('allow_share_article', 'true').lower() == 'true',
     'gavatar_cdn_base': os.environ.get('gavatar_cdn_base', '//cdn.v2ex.com/gravatar/'),
     'gavatar_default_image': os.environ.get('gavatar_default_image', 'http://a_logo_image.jpg'),
     'background_image': {
-        'home': os.environ.get('bg_home') or 'static/img/indexbg.jpg',
-        'post': os.environ.get('bg_post') or 'http://7d9q7a.com1.z0.glb.clouddn.com/octblog-bg.jpg',
-        'about': os.environ.get('bg_about') or 'http://7d9q7a.com1.z0.glb.clouddn.com/octblog_about.jpg',
-        'qiniu': os.environ.get('qiniu') or 'http://assets.qiniu.com/qiniu-transparent.png',
+        'home': os.environ.get('bg_home') or '/static/img/indexbg.jpg',
+        'post': os.environ.get('bg_post') or '/static/img/indexbg.jpg',
+        'about': os.environ.get('bg_about') or '/static/img/indexbg.jpg',
+        'qiniu': os.environ.get('qiniu') or '/static/img/sevenniu.jpg',
     },
     'daovoice':{
         'allow_daovoice': (os.environ.get('allow_daovoice', 'false').lower() == 'true' and os.environ.get('daovoice_app_id') is not None),
