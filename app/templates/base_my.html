@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    {% if post %}
+    <meta name="title" content="{{ post.title }} | {{ blog_meta.name }}">
+    <meta name="description" content="{{ post.abstract }}">
+    <meta name="author" content="{{ post.author.username }}">
+    <meta name="keywords" content="{{ post.tags|join(',') }}">
+    {% else %}
+    <meta name="title" content="{{ blog_meta.name }}">
+    <meta name="description" content="{{ blog_meta.description }}">
+    <meta name="author" content="{{ blog_meta.owner }}">
+    <meta name="keywords" content="{{ blog_meta.keywords }}">
+    {% endif %}
+
+    <meta name="google-site-verification" content="{{ blog_meta.google_site_verification }}">
+    <meta name="baidu-site-verification" content="{{ blog_meta.baidu_site_verification }}">
+    <meta name="sogou_site_verification" content="{{ blog_meta.sogou_site_verification }}"/>
+    <meta name="sogou-site-verification" content="{{ blog_meta.sogou_site_verification }}"/>
+
+    <title>{% block title %}MeYou`s Blog{% endblock %}</title>
+
+    <!-- Favourite icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='img/favicon-96x96.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon-16x16.png') }}">
+    
+    <!-- Bootstrap Core CSS  CDN-->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/highlight.js/9.9.0/styles/default.min.css"  rel="stylesheet">
+    
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/clean-blog.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/meyou.css') }}" rel="stylesheet">
+    
+    <!-- Recenet changs in my blog for SEO -->
+    <link href="{{ url_for('main.recent_feed') }}" rel="alternate" title="Recent Changes"  type="application/atom+xml">
+
+    {% block custom_head %}{% endblock %}
+
+    <!-- Custom Fonts -->
+</head>
+<body>
+
+<!-- Set your background image for this header on the line below. -->
+{%block header %}
+<header class="intro-header fixed-top" style="background-image: url({{ bg_home }})">
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">-->
+                <!--<div class="site-heading">-->
+                    <!--<h1>{{ blog_meta.name }}</h1>-->
+                    <!--<hr class="small">-->
+                    <!--<!-- we do not need rss below-->-->
+                    <!--<span class="subheading">{{ blog_meta.subtitle }} </span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+</header>
+{% endblock %}
+
+<!-- Navigation -->
+<nav class="navbar navbar-toggleable-md navbar-inverse  fixed-top bg-inverse" style="margin-top:110px;">
+      <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="{{ url_for('main.index') }}" style="font-size:15px">MeYou`s Blog</a>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link"  href="{{ url_for('main.index') }}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{ url_for('main.archive') }}">Archive</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Profile</a>
+                </li>
+                <!--add more page in the  header-->
+                <li class="nav-item active">
+                {% for page in pages %}   
+                  <a href="{{ url_for('main.page_detail', slug=page.slug) }}">{{ page.slug }}</a>
+                </li>
+                {% endfor %}
+                
+                <!--login state-->
+                {% if current_user.is_authenticated %}
+                <li class="nav-item active">
+                  <a class="nav-link"  href="{{ url_for('blog_admin.index') }}">{{ current_user.username }}</i></a>
+                </li>
+                {% endif %}
+           </ul>
+           
+            <!--RSS-->
+            <div class="nav-item" style="text-align:right;">
+              <a class="nav-link" style="color:white;" href="{{ url_for('main.recent_feed') }}" target="_blank">RSS</a>
+            </div>
+            
+            <!--search form-->
+            <form id="search-form" class="form-inline mt-2 mt-md-0">
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                  <input type="text" class="form-control" id="search" name="keywords" placeholder="search" value="{% if keywords %}{{ keywords }}{% endif %}">
+                </div>
+              </div>
+              <!-- <button type="submit" class="btn btn-default">Transfer cash</button> -->
+            </form>   
+     </div>
+</nav>
+    
+    
+<!-- Main Content -->
+{%block main %}
+<div class="container-fluid" >
+    <div class="row" >
+        <nav class="col-sm-3 col-md-3 hidden-xs-down bg-faded sidebar"  >
+            <div style="height:110px"> </div>
+      
+            {% block left_content %}
+            
+            {% endblock %}
+            <div class="col-sm-2 offset-sm-2 col-md-2 offset-md-2 pt-3" >
+                <table > 
+                 <tr> 
+                    <td>
+                            <a href="https://creativecommons.org/licenses/" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-creative-commons fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                    </td>
+                    <td> 
+                            <a href="{{ url_for('main.recent_feed') }}">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                    </td>
+                    <td>
+                            <a href="https://github.com/huangtao00" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>                
+                    </td>
+                    
+                    <td>
+                                <a href="/accounts/login/">
+                                <i class="fa fa-bank fa-2x" aria-hidden="true"></i>
+                                </a>
+                    </td>
+                 </tr>
+                </table>
+             </div>  
+            <!--<footer>-->
+                <div class="row">
+                    <div class="col-lg-12 text-center col-sm-12 col-md-12">
+                        <p class="copyright text-muted" style="font-size:13px">Copyright &copy; MeYou`s Blog 2018</p>
+                    </div>
+                </div>
+            <!--</footer>-->
+          
+            
+        </nav>
+
+        <div class="col-sm-8 offset-sm-3 col-md-8 offset-md-3 pt-3">
+            <div style="height:110px"> 
+            </div>
+            {% block right_content %}
+            
+            
+            
+            {% endblock %}
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+      
+    
+<!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="http://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="//cdn.bootcss.com/highlight.js/9.9.0/highlight.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+    {% if allow_daovoice %}
+        {% if current_user.is_authenticated %}
+            <script type="text/javascript">
+                  daovoice('init', {
+                  app_id: "{{ dao_app_id }}",
+                  user_id: "{{ current_user.username }}", // 必填: 该用户在您系统上的唯一ID
+                  email: "{{ current_user.email }}", // 选填:  该用户在您系统上的主邮箱
+                  name: "{{ current_user.username }}", // 选填: 用户名
+                  signed_up: {{ current_user.create_time.strftime("%s") }} // 选填: 用户的注册时间，用Unix时间戳表示
+                });
+                daovoice('update');
+            </script>
+
+        {% else %}
+            <script type="text/javascript">
+                daovoice('init', {
+                  app_id: "{{ dao_app_id }}"
+                });
+                daovoice('update');
+            </script>
+
+        {% endif %}
+    {% endif %}
+
+
+    {% block js %}
+    {% endblock %}
+</body>
+</html>

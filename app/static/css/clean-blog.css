@@ -8,7 +8,7 @@ body {
   /*font-family: 'Lora', 'Times New Roman', serif;*/
   font-family: "sans-serif","lucida grande", "lucida sans unicode", lucida, helvetica, "STHeiti Light", "Microsoft YaHei", "WenQuanYi Micro Hei";
   font-size: 18px;
-  color: #404040;
+  /*color: #404040;*/
   background-color:#eee;
 }
 p {
@@ -143,8 +143,8 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin-bottom: 50px;
-  height:180px;
+  margin-bottom: 0px;
+  height:110px;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
@@ -156,7 +156,7 @@ hr.small {
   .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
-    padding: 50px 0;
+    padding: 3px 0;
   }
 }
 .intro-header .site-heading,
@@ -165,22 +165,24 @@ hr.small {
 }
 .intro-header .site-heading h1,
 .intro-header .page-heading h1 {
-  margin-top: 0;
-  font-size: 40px;
+  margin-top: 10px;
+  font-size: 30px;
+  color:#aaa;
+  
 }
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
-  font-size: 24px;
+  font-size: 10px;
   line-height: 1.1;
   display: block;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, "STHeiti Light", "Microsoft YaHei", 'Hiragino Sans GB', 'SimHei', sans-serif;
-  font-weight: 300;
+  font-weight: bold;
   margin: 10px 0 0;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 .intro-header .post-heading h1 {
@@ -224,7 +226,7 @@ hr.small {
 .post-preview > a:hover,
 .post-preview > a:focus {
   text-decoration: none;
-  color: #0085a1;
+  color: #880000;
 }
 .post-preview > a > .post-title {
   font-size: 30px;
@@ -245,11 +247,12 @@ background-color:#f3f3fa;
 padding: 2px 5px 3px 5px;
 border-radius: 5px 5px;
 box-shadow: 1px 3px #777;
+margin-top:22px;
 }
 /*index page tag and category string */
 .post-preview > .post-meta {
   color: #000077;
-  font-size: 18px;
+  font-size: 14px;
   font-style: normal;
   font-weight:bold;
   margin-top: 0;
@@ -260,7 +263,7 @@ box-shadow: 1px 3px #777;
   text-decoration: none;
   color: #770000;
   margin-right:15px;
-  margin-left:-12px;
+  margin-left:-8px;
 }
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
@@ -269,6 +272,7 @@ box-shadow: 1px 3px #777;
 }
 .post-preview > .post-author {
 text-align:right;
+font-size:12px;
 
 }
 .post-preview > .post-author > a {
@@ -284,7 +288,7 @@ font-style: italic;
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
     font-size: 36px;
-    /*font-style: italic;*/
+    font-style: italic;
   }
 }
 .section-heading {/*font-style: italic;*/

@@ -1,15 +1,53 @@
-{% extends 'base.html' %}
+{% extends 'base_my.html' %}
 
 {% block title %}{{ blog_meta.name }}{% endblock %}
 {% block header %}
 {{ super() }}
 {% endblock %}
 
+
+
 {% block main %}
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1">
-            {% for post in posts.items %}
+{{super()}}
+
+{% endblock %} 
+
+{% block left_content %}
+
+
+                <p class="post-meta">
+                分类： 
+                
+                
+                <!--tag list-->
+                <div clas="left-tag">
+                标签：
+                {% for tag in tags %}
+                     <a href="?tag={{tag}}" class="post-tag">
+                        {% if tag == cur_tag %}
+                        <span class="label label-primary">
+                            {{ tag }}
+                            <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
+                        </span>
+                        
+                        {% else %}
+                        <span class="label label-default">
+                            {{ tag }}
+                        </span>
+                        
+                        {% endif %}      
+                    </a>
+                    &nbsp;
+                {% endfor %}
+                fda fda fdafd fd fsdj abcd
+                    </div>
+                </p>
+            
+
+{% endblock %}
+
+{% block right_content %}
+     {% for post in posts.items %}
             <div class="post-preview">
                 <a href="{{ url_for('main.post_detail', slug=post.slug) }}">
                     <h2 class="post-title">
@@ -39,90 +77,32 @@
                     No articles found here
                 </p>
             {% endfor %}
-            <!-- Pager -->
-            <ul class="pager">
+            
+            <!-- show previos and next pagination -->
+            <ul class="pagination">
                 {% if posts.has_next %}
-                <li class="next">
-                    <a href="?page={{ posts.next_num }}
-                        {%- if cur_category %}&category={{ cur_category }}{% endif %}
-                        {%- if cur_tag %}&tag={{ cur_tag }}{% endif %}">Older Posts &rarr;</a>
-                </li>
+                    <li class="page-item">
+                        <a class="page-link"  href="?page={{ posts.next_num }}
+                            {%- if cur_category %}&category={{ cur_category }}{% endif %}
+                            {%- if cur_tag %}&tag={{ cur_tag }}{% endif %}">Older Posts &rarr;
+                        </a>
+                    </li>
                 {% endif %}
                 {% if posts.has_prev %}
-                    <li class="next"><a href="?page={{ posts.prev_num }}
-                        {%- if cur_category %}&category={{ cur_category }}{% endif %}
-                        {%- if keywords %}&keywords={{ keywords }}{% endif %}
-                        {%- if cur_tag %}&tag={{ cur_tag }}{% endif %}">Previous Posts</a></li>
+                    <li class="page-item">
+                        <a class="page-link"  href="?page={{ posts.prev_num }}
+                            {%- if cur_category %}&category={{ cur_category }}{% endif %}
+                            {%- if keywords %}&keywords={{ keywords }}{% endif %}
+                            {%- if cur_tag %}&tag={{ cur_tag }}{% endif %}">&larr;Previous Posts
+                        </a>
+                    </li>
                 {% endif %}
             </ul>
-        </div>
-        
-
-        <div class="col-lg-3 col-md-2">
-            <h3>Search</h3><hr/>
-            <form id="search-form">
-              <div class="form-group">
-                <div class="input-group">
-                  <div class="input-group-addon"><i class="fa fa-search"></i></div>
-                  <input type="text" class="form-control" id="search" name="keywords" placeholder="search" value="{% if keywords %}{{ keywords }}{% endif %}">
-                </div>
-              </div>
-              <!-- <button type="submit" class="btn btn-default">Transfer cash</button> -->
-            </form>
-            <!-- <hr> -->
-            <br>
-
-            <h3>Tags</h3><hr/>
-            {% for tag in tags %}
-                <a href="?tag={{tag}}" class="post-tag">
-                    {% if tag == cur_tag %}
-                    <span class="label label-primary">
-                        {{ tag }}
-                        <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
-                    </span>
-                    
-                    {% else %}
-                    <span class="label label-default">
-                        {{ tag }}
-                    </span>
-                    
-                    {% endif %}
-                    
-                </a>
-                &nbsp;
-            {% endfor %}
-
             
-            <h3>Category</h3><hr/>
-            <div class="list-group">
-                {% for category in category_cursor %}
-                {% if category and category.name %}
-                    {% if cur_category == category.name %}
-                        <a href="?category={{ category.name }}" class="list-group-item category-list active">{{ category.name }} 
-                        <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
-                        <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
-                    {% else %}
-                        <a href="?category={{ category.name }}" class="list-group-item category-list ">{{ category.name }} 
-                        <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
-                    {% endif %}
-                {% endif %}
-                {% endfor %}
-            </div>
 
 
-            {% for widget in widgets %}
-            <h3>{{ widget.title | safe }}</h3><hr/>
-            <div class="list-group">
-                {{ widget.html_content | safe }}
-            </div>
-            {% endfor %}
-                        
-        </div>
-    </div>
-</div>
-
-<hr>
 {% endblock %}
+
 
 {% block js %}
 {{ moment.include_moment(local_js="//cdn.bootcss.com/moment.js/2.18.1/moment-with-locales.min.js") }}
