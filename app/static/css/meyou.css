@@ -50,3 +50,14 @@ margin-top:10px;
 padding: 1px 10px 10px 10px;
 
 }
+.left-tag 
+{
+padding-left:10px;
+}
+.left-tag > h3 
+{
+font-size:25px;
+color: #000077;
+/*font-style:italic;*/
+font-weigth:160; 
+}

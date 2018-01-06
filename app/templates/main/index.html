@@ -15,34 +15,54 @@
 {% block left_content %}
 
 
-                <p class="post-meta">
-                分类： 
                 
-                
-                <!--tag list-->
-                <div clas="left-tag">
-                标签：
-                {% for tag in tags %}
-                     <a href="?tag={{tag}}" class="post-tag">
-                        {% if tag == cur_tag %}
-                        <span class="label label-primary">
-                            {{ tag }}
-                            <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
-                        </span>
+                    <div class="left-tag">
+                       <hr style="height:2px;border:none;border-top:5px solid #ddd;margin:0px 5px 3px 0px;" />
+
+                        <h3>分类：</h3>
+                            
+                            {% for category in category_cursor %}
+                            {% if category and category.name %}
+                                {% if cur_category == category.name %}
+                                    <a href="?category={{ category.name }}"  class="post-tag badge badge-danger">{{ category.name }} 
+                                    <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
+                                    <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
+                                {% else %}
+                                    <a href="?category={{ category.name }}" class="post-tag badge badge-success">{{ category.name }} 
+                                    <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
+                                {% endif %}
+                            {% endif %}
+                            &nbsp;
+                            {% endfor %}
                         
-                        {% else %}
-                        <span class="label label-default">
-                            {{ tag }}
-                        </span>
                         
-                        {% endif %}      
-                    </a>
-                    &nbsp;
-                {% endfor %}
-                fda fda fdafd fd fsdj abcd
+                        <!--tag list-->
+                        <hr style="height:2px;border:none;border-top:5px solid #ddd;margin:5px 5px 3px 0px;" />
+                       
+                        <h3> 标签：</h3>
+                        <hr style="height:2px;border:none;border-top:0px dashed #333;margin:0px 5px 0px 0px;" />
+                        {% for tag in tags %}
+                             <a href="?tag={{tag}}" class="post-tag">
+                                <!--if user click the tag-->
+                                {% if tag == cur_tag %}  
+                                <span class="badge badge-pill badge-danger">
+                                    {{ tag }}
+                                    <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
+                                </span>
+                                
+                                {% else %}
+                                <span class="badge badge-pill badge-primary">
+                                    {{ tag }}
+                                </span>
+                                
+                                {% endif %}      
+                            </a>
+                            &nbsp;
+                        {% endfor %}
                     </div>
-                </p>
-            
+                
+                <hr style="height:2px;border:none;border-top:5px solid #ddd;margin:0px 5px 0px 0px;" />
+
 
 {% endblock %}
 
@@ -99,9 +119,16 @@
                 {% endif %}
             </ul>
             
-
+ <!--know nothing about this -->
+                {% for widget in widgets %}
+                    <h3>{{ widget.title | safe }}</h3><hr/>
+                    <div class="list-group">
+                        {{ widget.html_content | safe }}
+                    </div>
+                {% endfor %}
 
 {% endblock %}
+ 
 
 
 {% block js %}
