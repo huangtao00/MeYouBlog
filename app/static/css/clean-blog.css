@@ -223,31 +223,33 @@ hr.small {
 .post-preview > a {
   color: #404040;
 }
-.post-preview > a:hover,
-.post-preview > a:focus {
-  text-decoration: none;
-  color: #880000;
-}
-.post-preview > a > .post-title {
+
+.post-preview > .post-title {
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 10px;
+  font-weight:bold;
   /*font-style:italic;*/
 }
-
-.post-preview > a > .post-subtitle {
-  margin: 0;
-  font-weight: 300;
-  margin-bottom: 10px;
-
+.post-preview > .post-title> a{
+ text-decoration:none;
+  
 }
+.post-preview > .post-title> a:hover,
+.post-preview > .post-title> a:focus{
+text-decoration: none;
+  color: #880000;
+}
+
+
 /*index page abstract style*/
 .post-preview > .post-subtitle {
 background-color:#f3f3fa;
 padding: 2px 5px 3px 5px;
 border-radius: 5px 5px;
-box-shadow: 1px 3px #777;
+box-shadow: 7px 10px #777;
 margin-top:22px;
+padding-bottom:40px;
 }
 /*index page tag and category string */
 .post-preview > .post-meta {
@@ -255,10 +257,32 @@ margin-top:22px;
   font-size: 14px;
   font-style: normal;
   font-weight:bold;
-  margin-top: 0;
+
   margin-bottom:-20px;
-  padding-bottom:-20px;
+  padding-top:-12px;
+  margin-left:15px;
+  
+  
 }
+ .post-meta {
+  color: #000033;
+  font-size:19px;
+  font-style: normal;
+  font-weight:bold;
+
+  margin-bottom:3px;
+  padding-top:0px;
+  margin-top:0px;
+  margin-left:-10px;
+
+}
+.post-meta > a {
+  text-decoration: none;
+  color: #770000;
+  margin-right:15px;
+  margin-left:-8px;
+}
+
 .post-preview > .post-meta > a {
   text-decoration: none;
   color: #770000;
@@ -270,15 +294,25 @@ margin-top:22px;
   color: #0085a1;
   /*text-decoration: underline;*/
 }
-.post-preview > .post-author {
+.post-preview >  .post-author {
 text-align:right;
-font-size:12px;
+font-size:16px;
+float:right;
+padding-top:0px;
+margin-top: 20px;
+margin-bottom: 10px;
 
 }
-.post-preview > .post-author > a {
+.post-preview >  .post-author > a {
 text-decoration:none;
+font-weight:bold;
 color:#000077;
 }
+.post-preview >  .post-author > a:hover,
+.post-preview >  .post-author > a:focus{
+color:#880000;
+}
+
 .caption > h3 > a:hover {
 text-decoration:none;
 }
@@ -286,9 +320,10 @@ text-decoration:none;
 font-style: italic;
 }
 @media only screen and (min-width: 768px) {
-  .post-preview > a > .post-title {
-    font-size: 36px;
+  .post-preview > .post-title {
+    font-size: 30px;
     font-style: italic;
+    display: inline;
   }
 }
 .section-heading {/*font-style: italic;*/

@@ -31,33 +31,55 @@ font-family: 'SimHei',"SimSun", "Helvetica", "STHeiti Light", 'Hiragino Sans GB'
 }  
 
 .post-nav {
-height:350px;
+
 box-shadow: 3px 7px #777;
 border-color:#ddd;
-border-radius:10px 20px;
-border-width:2px;
-background-color:#FdFFFF;
+border-radius:4px 4px;
+/*border-width:2px;*/
+background-color:#f7f7ff;
+margin-bottom:4px;
+padding-left:10px;
+padding-right:15px;
+/*font-weight:bold;*/
+font-size:20px;
 }
 .post-content {
 
 /*height:350px;*/
 box-shadow: 3px 7px #777;
-border-color:#ddd;
-/*border-radius:3px 3px 10px 10px;*/
+border-color:#777;
+border-radius:3px 3px 10px 10px;
 border-width:10px;
 background-color:#FAFDFF;
-margin-top:10px;
-padding: 1px 10px 10px 10px;
+margin-top:0px;
+padding: 10px 10px 0px 10px;
 
+}
+.post-content >p {
+ margin-top:0px;
+ margin-bottom:2px;
 }
 .left-tag 
 {
 padding-left:10px;
+
+padding:20px 0px 4px 20px;
+margin: 10px 10px 40px 10px;
+border-style:none solid solid solid;
+border-width:2px;
+background-color:#f0f0f1;
+border-color:#999;
+border-radius: 5px 5px;
+box-shadow: 2px 6px #444;
+
 }
-.left-tag > h3 
+
+
+.cate-tag-show 
 {
-font-size:25px;
-color: #000077;
-/*font-style:italic;*/
-font-weigth:160; 
+font-size:50px;
+color: #000033;
+margin-bottom:-23px;
+margin-left:20px;
+font-size:20px;
 }

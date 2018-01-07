@@ -25,10 +25,12 @@
     <title>{% block title %}MeYou`s Blog{% endblock %}</title>
 
     <!-- Favourite icon -->
+  
+
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='img/favicon-96x96.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon-16x16.png') }}">
-    
+
     <!-- Bootstrap Core CSS  CDN-->
     <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -84,7 +86,7 @@
                   <a class="nav-link" href="{{ url_for('main.archive') }}">Archive</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Profile</a>
+                  <a class="nav-link" href="#">About</a>
                 </li>
                 <!--add more page in the  header-->
                 <li class="nav-item active">
@@ -107,7 +109,7 @@
             </div>
             
             <!--search form-->
-            <form id="search-form" class="form-inline mt-2 mt-md-0">
+            <form id="search-form" class="form-inline mt-2 mt-md-0" method="get" action="/">
               <div class="form-group">
                 <div class="input-group">
                   <div class="input-group-addon"><i class="fa fa-search"></i></div>
@@ -125,51 +127,67 @@
 <div class="container-fluid" >
     <div class="row" >
         <nav class="col-sm-3 col-md-3 hidden-xs-down bg-faded sidebar"  >
-            <div style="height:110px"> </div>
+            <div style="height:120px"> </div>
       
             {% block left_content %}
+                 <h3 class="cate-tag-show" >分类：</h3>
+                    <div class="left-tag" >
+                       
+                        {% for category in category_cursor %}
+                        {% if category and category.name %}
+                            {% if cur_category == category.name %}
+                                <a href="/?category={{ category.name }}"  class="post-tag badge badge-danger">{{ category.name }} 
+                                <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
+                                <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
+                            {% else %}
+                                <a href="/?category={{ category.name }}" class="post-tag badge badge-success">{{ category.name }} 
+                                <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
+                            {% endif %}
+                        {% endif %}
+                        &nbsp;
+                        {% endfor %}
+                            
+                    </div>
+                    <h3 class="cate-tag-show"> 标签：</h3>
+                    <div class="left-tag">    
+                        <!--tag list-->
+                    
+                        {% for tag in tags %}
+                             <a href="/?tag={{tag}}" class="post-tag">
+                                <!--if user click the tag-->
+                                {% if tag == cur_tag %}  
+                                <span class="badge badge-pill badge-danger">
+                                    {{ tag }}
+                                    <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
+                                </span>
+                                
+                                {% else %}
+                                <span class="badge badge-pill badge-primary">
+                                    {{ tag }}
+                                </span>
+                                
+                                {% endif %}      
+                            </a>
+                            &nbsp;
+                        {% endfor %}
+                    </div>
+                <!--segemnt id show-->
+                <div style="padding-left:10px; padding-right:10px;">
+                <script src='//w.segmentfault.com/card/1030000000594924.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=333333&btn=009a61&noBtn=0'></script>
+                <div>
+                <hr style="height:2px;border:none;border-top:2px dashed #333;margin:0px 5px 0px 0px;" />
             
             {% endblock %}
-            <div class="col-sm-2 offset-sm-2 col-md-2 offset-md-2 pt-3" >
-                <table > 
-                 <tr> 
-                    <td>
-                            <a href="https://creativecommons.org/licenses/" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-creative-commons fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                    </td>
-                    <td> 
-                            <a href="{{ url_for('main.recent_feed') }}">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                    </td>
-                    <td>
-                            <a href="https://github.com/huangtao00" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>                
-                    </td>
-                    
-                    <td>
-                                <a href="/accounts/login/">
-                                <i class="fa fa-bank fa-2x" aria-hidden="true"></i>
-                                </a>
-                    </td>
-                 </tr>
-                </table>
-             </div>  
+
             <!--<footer>-->
                 <div class="row">
                     <div class="col-lg-12 text-center col-sm-12 col-md-12">
-                        <p class="copyright text-muted" style="font-size:13px">Copyright &copy; MeYou`s Blog 2018</p>
+                        <p class="copyright text-muted" style="font-size:13px">
+                         <a href="/accounts/login/">
+                            <i class="fa fa-bank fa-2x" aria-hidden="true"></i>
+                        </a>
+                        Copyright &copy; MeYou`s Blog 2018 
+                        </p>
                     </div>
                 </div>
             <!--</footer>-->

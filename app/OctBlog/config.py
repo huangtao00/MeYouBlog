@@ -39,7 +39,7 @@ OctBlogSettings = {
     'pagination':{
         'per_page': int(os.environ.get('per_page', 5)),
         'admin_per_page': int(os.environ.get('admin_per_page', 10)),
-        'archive_per_page': int(os.environ.get('admin_per_page', 20)),
+        'archive_per_page': int(os.environ.get('admin_per_page', 10)),
     },
     'blog_comment':{
         'allow_comment': os.environ.get('allow_comment', 'true').lower() == 'true',
@@ -62,7 +62,7 @@ OctBlogSettings = {
     },
     'copyright': {
         'display_copyright': os.environ.get('allow_display_copyright', 'true').lower() == 'true',
-        'copyright_msg': get_env_value('copyright_msg', '如果您要转载该文章，请联系作者!')
+        'copyright_msg': get_env_value('copyright_msg', '欢迎转载！')
     },
     'only_abstract_in_feed': os.environ.get('only_abstract_in_feed', 'false').lower() == 'true',
     'allow_share_article': os.environ.get('allow_share_article', 'true').lower() == 'true',

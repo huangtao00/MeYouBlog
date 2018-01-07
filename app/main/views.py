@@ -46,8 +46,7 @@ def get_base_data():
 
 def index():
     return 'Hello'
-
-def list_posts():
+def get_index_page_data():
     # Not compatible with old post model, deprecated
     # posts = models.Post.objects.filter(post_type='post', is_draft=False, weight__gt=0).order_by('-weight', '-pub_time')
     posts = models.Post.objects.filter(post_type='post', is_draft=False).order_by('-weight', '-pub_time')
@@ -89,10 +88,6 @@ def list_posts():
         ])
 
     widgets = models.Widget.objects(allow_post_types='post')
-
-
-
-
     posts = posts.paginate(page=cur_page, per_page=PER_PAGE)
 
     data = get_base_data()
@@ -103,7 +98,9 @@ def list_posts():
     data['tags'] = tags
     data['keywords'] = keywords
     data['widgets'] = widgets
-
+    return data
+def list_posts():
+    data=get_index_page_data()
     return render_template('main/index.html', **data)
 
 def list_wechats():
@@ -158,16 +155,16 @@ def post_detail(slug, post_type='post', fix=False, is_preview=False):
     data = get_base_data()
     data['post'] = post
     data['post_type'] = post_type
-
     if request.form:
         form = forms.CommentForm(obj=request.form)
+        #print "this one "
     else:
         obj = {'author': session.get('author'), 'email': session.get('email'),'homepage': session.get('homepage'),}
         form = forms.CommentForm(**obj)
-        # print session.get('email')
-
+        #print session.get('email')
 
     if request.form.get('oct-comment') and form.validate_on_submit():
+        print "validate"
         octblog_create_comment(form, post)
         url = '{0}#comment'.format(url_for('main.post_detail', slug=slug))
         msg = 'Succeed to comment, and it will be displayed when the administrator reviews it.'
@@ -206,7 +203,8 @@ def post_detail(slug, post_type='post', fix=False, is_preview=False):
         'page': 'main/post.html',
         'wechat': 'main/wechat_detail.html',
     }
-
+    
+    data.update(get_index_page_data())
     return render_template(templates[post_type], **data)
 
 def post_preview(slug, post_type='post'):
@@ -232,6 +230,7 @@ def author_detail(username):
     # data['cur_tag'] = cur_tag
     # data['tags'] = tags
     # data['keywords'] = keywords
+    data.update(get_index_page_data())
 
     return render_template('main/author.html', **data)
 
@@ -323,7 +322,9 @@ def archive():
 
     data = get_base_data()
     data['posts'] = posts
-
+    mydata=get_index_page_data()
+    mydata.update(data)
+    data=mydata
     return render_template('main/archive.html', **data)
 
 def make_external(url):

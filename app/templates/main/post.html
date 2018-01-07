@@ -10,69 +10,67 @@
 
 {% endblock %}
 {% block main %}
+{{super()}}
+{% endblock %}
+
+
+{% block right_content %}
+
 <div class="container">
             <div class="row">
-                <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-11 col-sm-offset-0" >
-                    <h2 style="font-style:italic;">{{ post.title| title }}</h2>
-                    <hr style="height:2px;border:none;border-top:1px solid #0066CC;margin:5px 5px 5px 5px;" />
+                <div class="col-lg-12  col-md-12  col-sm-12" >
+                    <h2 style="font-style:italic;text-align:center;padding-top:10px;">{{ post.title| title }}</h2>
+                    <hr style="height:2px;border:none;border-top:1px solid #0066CC;margin:5px 5px 0px 5px;" />
                 </div>   
             </div>
     <div class="row">
-
-            <div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0" >
-                
-                    
-                    作者：<span>{{ post.author }}</span>
-                    发表时间：{{ moment(post.pub_time).format('YYYY/MM/DD') }}<!--'YYYY/MM/DD-h:mm a' -->
-
-            </div>
-            <div class="col-lg-5 col-md-5 col-sm-5"  style="text-align:right">
-                    <span >
-                     标签：
-                       <span class="meta"> {% for tag in post.tags %} <a href="{{ url_for('main.index') }}?tag={{ tag }}">{{ tag }}</a>  {% endfor %}
-                       </span>
-                    {% if post.category%}
-                    分类：<span class="meta"><a href="{{ url_for('main.index') }}?category={{ post.category }}">{{ post.category }}</a></span>
-                    {% endif %}
-                   <span>
-            </div>
-
-            
+            <div class="col-lg-12  col-md-12  col-sm-12 "  >
+                    <p class="post-meta" >
+                    分类：{% if post.category%}<a href="{{ url_for('main.index') }}?category={{ post.category }}"><span class="badge badge-primary">{{ post.category }}</span></a>{% endif %}
+                    标签：{% for tag in post.tags %} <a href="{{ url_for('main.index') }}?tag={{ tag }}"> <span class="badge  badge-primary">{{ tag }}</span>  </a>  {% endfor %}
+                   </p>
+            </div>    
     </div>
     <div class="row">
-                <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-0" >
-                    <div class="post-content">
-                       <article>
+                <div class="col-lg-12  col-md-12  col-sm-12 post-content" >
+                   
                             {{post.content_html|safe}}
-                       </article>
-                    </div>
+                     
                 </div>
     </div>
+    
+    
     
    <article>
         {% if not post.post_type=='page' %}
            <div class="container">
             <div class="row">
                 
-                    <div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-1 col-sm-8 col-sm-offset-0">
-                    {% if display_copyright %}
-                        <p><strong>{{ copyright_msg }}</strong></p>
-                    {% endif %}
+                    <div class="col-lg-12  col-md-12  col-sm-12" style="margin-left:-27px;">
+                        <div style="margin-left:0px; padding-left:0px;margin-top:15px;display:inline;background-color:none;float:left;">
+                            {% if display_copyright %}
+                                <strong>{{ copyright_msg }}</strong>
+                            {% endif %}
+                        </div>
+                        
+                        {% if allow_share_article %}
+                        <div class="share-component" data-sites="weibo,wechat,douban,qq"  style="float:left;margin-top:10px;background-color:none;">
+                        </div>
+                        {% endif %}
+                        
+                        <div  style="float:right;background-color:none;margin-top:10px;margin-right:-55px;">
+                        作者：<span>{{ post.author }}</span>
+                        发表时间：{{ moment(post.pub_time).format('YYYY/MM/DD') }}<!--'YYYY/MM/DD-h:mm a' -->
+                        </div>
                     </div>
-                 
-                 {% if allow_share_article %}
-                    <div class="col-lg-5 col-md-5 col-sm-5" style="text-align:right">
-                    <br>
-                        <div class="share-component" data-sites="weibo,wechat,douban,qq"></div>
-                    </div>
-                 {% endif %}
+            </div>
 
             </div>
            </div>
             
         
-        
-            {% if allow_donate %}
+            <!--maybe this will be useful in the future-->
+            {% if not allow_donate %}
             <div class="row">
                 <!-- donate -->
                 <div class ="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -91,8 +89,9 @@
             </div>
             <br>
             {% endif %}
-
-            {% if display_wechat %}
+            
+            <!--maybe this will be useful in the future-->
+            {% if not display_wechat %}
             <div class="row">
                 <!-- donate -->
                 <div class ="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -103,21 +102,21 @@
             </div>
             {% endif %}
             
-        {% endif %}
-            
-        <!-- </div> -->
+        {% endif %} 
     </article>
     <br>
     <hr>
+    
+    
     {% if allow_comment %}
         <article>
-            <!-- <div class="container"> -->
+             <div class="container"> 
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                        {{ comment_html|safe }}
+                    <div class="col-lg-12  col-md-12  col-sm-12">
+                        {{ comment_html|safe }} 
                     </div>
                 </div>
-            <!-- </div> -->
+             </div> 
         </article>
     {% endif %}
 </div>
