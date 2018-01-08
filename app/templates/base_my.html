@@ -216,9 +216,16 @@
 <script src="http://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
 <!-- Custom Theme JavaScript -->
 <script src="//cdn.bootcss.com/highlight.js/9.9.0/highlight.min.js"></script>
-
 <script>hljs.initHighlightingOnLoad();</script>
-
+<!--add target=_blank for all the a links-->
+<script type="text/javascript">  
+    $(document).ready(function() {  
+        //为超链接加上target='_blank'属性  
+        $('a[href^="http"]').each(function() {  
+            $(this).attr('target', '_blank');  
+        });  
+    });  
+</script> 
     {% if allow_daovoice %}
         {% if current_user.is_authenticated %}
             <script type="text/javascript">
@@ -242,8 +249,7 @@
 
         {% endif %}
     {% endif %}
-
-
+s
     {% block js %}
     {% endblock %}
 </body>

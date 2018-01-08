@@ -48,18 +48,21 @@ font-size:20px;
 
 /*height:350px;*/
 box-shadow: 3px 7px #777;
-border-color:#777;
-border-radius:3px 3px 10px 10px;
-border-width:10px;
+border-color:#9ab;
+border-radius:0px 0px 10px 10px;
+border-width:2px;
 background-color:#FAFDFF;
-margin-top:0px;
-padding: 10px 10px 0px 10px;
+margin-top:10px;
+padding: 10px 10px 20px 10px;
+border-style:none solid solid solid;
 
 }
 .post-content >p {
  margin-top:0px;
  margin-bottom:2px;
 }
+
+
 .left-tag 
 {
 padding-left:10px;

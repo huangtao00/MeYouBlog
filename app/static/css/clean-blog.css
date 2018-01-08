@@ -25,8 +25,12 @@ h4,
 h5,
 h6 {
   /*font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, "STHeiti Light", "Microsoft YaHei", 'Hiragino Sans GB', 'SimHei', sans-serif;
-  font-weight: 800;
+  font-family:  "STHeiti Light", "Microsoft YaHei", 'Hiragino Sans GB', 'SimHei', sans-serif,'Open Sans', 'Helvetica Neue', Helvetica, Arial;
+  font-weight: bold;
+}
+h4 {
+color:#334;
+
 }
 a {
   color: #404040;
