@@ -72,18 +72,18 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link"  href="{{ url_for('main.index') }}">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link"  href="{{ url_for('main.index') }}">主页 <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="{{ url_for('main.archive') }}">Archive</a>
+                  <a class="nav-link" href="{{ url_for('main.archive') }}">归档</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="#">关于</a>
                 </li>
                 <!--add more page in the  header-->
                 <li class="nav-item active">
                 {% for page in pages %}   
-                  <a href="{{ url_for('main.page_detail', slug=page.slug) }}">{{ page.slug }}</a>
+                  <a class="nav-link"  href="{{ url_for('main.page_detail', slug=page.slug) }}">{{ page.slug }}</a>
                 </li>
                 {% endfor %}
                 
