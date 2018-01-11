@@ -69,9 +69,9 @@ OctBlogSettings = {
     'gavatar_cdn_base': os.environ.get('gavatar_cdn_base', '//cdn.v2ex.com/gravatar/'),
     'gavatar_default_image': os.environ.get('gavatar_default_image', 'http://a_logo_image.jpg'),
     'background_image': {
-        'home': os.environ.get('bg_home') or '/static/img/indexbg.jpg',
-        'post': os.environ.get('bg_post') or '/static/img/indexbg.jpg',
-        'about': os.environ.get('bg_about') or '/static/img/indexbg.jpg',
+        'home': os.environ.get('bg_home') or '/static/img/timg3.jpg',
+        'post': os.environ.get('bg_post') or '/static/img/timg3.jpg',
+        'about': os.environ.get('bg_about') or '/static/img/timg3.jpg',
         'qiniu': os.environ.get('qiniu') or '/static/img/sevenniu.jpg',
     },
     'daovoice':{

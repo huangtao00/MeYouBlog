@@ -20,19 +20,19 @@
                 <div style="display:inline;font-weight:bold;float:left;">
                     <a href="{{ url_for('main.post_detail', slug=post.slug) }}"><i class="fa fa-file-word-o" aria-hidden="true"></i> {{ post.title| title }}</a>
                 </div>
-                <div style="float:left;font-size:10px;padding-top:20px;color:#000;">
+                <div style="float:left;font-size:10px;padding-top:15px;color:#000;">
                     <a href="?category={{ post.category }}"><span class="badge  badge-primary">{{ post.category }}</span>&nbsp;</a>
                 </div> 
                 
-                <div style="float:left;font-size:10px;padding-top:20px;color:#000;">
+                <div style="float:left;font-size:10px;padding-top:15px;color:#000;">
                     {% for tag in post.tags %} 
                     <a href="{{ url_for('main.index') }}?tag={{ tag }}"> 
                     <span class="  badge badge-warning">
                     {{ tag }}</span>  
                     </a>  {% endfor %}               
                 </div>                
-                <div style="float:right;font-size:15px;padding-top:15px;font-weight:bold;margin-bottom:0px;color:#993333;">
-                   <i class="fa fa-clock-o fa-2x" aria-hidden="true"> </i>__{{moment(post.pub_time).format('YYYY/MM/DD') }}<!--'YYYY/MM/DD-h:mm a' -->
+                <div style="float:right;font-size:15px;padding-top:15px;font-weight:bold;margin-bottom:0px;color:#772222;">
+                   <i class="fa fa-clock-o fa-1g" aria-hidden="true"> </i> {{moment(post.pub_time).format('YYYY/MM/DD') }}<!--'YYYY/MM/DD-h:mm a' -->
                 </div>
                 <br>
                 
