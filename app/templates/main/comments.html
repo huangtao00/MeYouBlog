@@ -5,11 +5,12 @@
 {{ messages.render_msg() }}
 
 {% import "_form.html" as forms %}
-<button data-toggle="collapse" data-target="#lmsg" class="btn btn-primary">留言:</button>
+<button data-toggle="collapse" data-target="#lmsg" class="btn btn-primary" style="padding:7px;font-size:16px;">留言:</button>
 
 <form method="POST" action="#comment" id="lmsg" class="collapse">
     {{ forms.render(form) }}
-    <button type="submit" class="btn btn-primary" name="oct-comment" value="oct-comment">Submit</button>
+    <button type="submit" class="btn btn-danger" name="oct-comment" value="oct-comment"  style="padding:7px;font-size:16px;float:right;">Submit</button>
+    <div style="clear:right;"> </div>
 </form>
 <br>
 
