@@ -166,6 +166,10 @@ def post_detail(slug, post_type='post', fix=False, is_preview=False):
     if request.form.get('oct-comment') and form.validate_on_submit():
         print "validate"
         octblog_create_comment(form, post)
+        print post_type
+        #if post_type=="page":
+            #url = '{0}#comment'.format(url_for('main.page_detail', slug=slug))
+        #else:
         url = '{0}#comment'.format(url_for('main.post_detail', slug=slug))
         msg = 'Succeed to comment, and it will be displayed when the administrator reviews it.'
         flash(msg, 'success')
@@ -200,11 +204,13 @@ def post_detail(slug, post_type='post', fix=False, is_preview=False):
 
     templates = {
         'post': 'main/post.html',
-        'page': 'main/post.html',
+        'page': 'main/page.html',
         'wechat': 'main/wechat_detail.html',
     }
-    
     data.update(get_index_page_data())
+    if slug=="About":
+        return render_template("main/about.html", **data)
+    
     return render_template(templates[post_type], **data)
 
 def post_preview(slug, post_type='post'):

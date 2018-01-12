@@ -155,7 +155,14 @@ top:50%;margin-top:-48px; position:absolute;left:50%;margin-left:-500px;width:10
 
 
 
+#post-header-detail {
+font-style:italic;
+text-align:center;
+padding-top:25px;
+color:#348;
+font-family: Arial,STKaiti, KaiTi,Tahoma, Helvetica,  FangSong;
 
+}
 
 
 .post-preview {
