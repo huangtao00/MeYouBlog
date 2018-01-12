@@ -167,10 +167,10 @@ def post_detail(slug, post_type='post', fix=False, is_preview=False):
         print "validate"
         octblog_create_comment(form, post)
         print post_type
-        #if post_type=="page":
-            #url = '{0}#comment'.format(url_for('main.page_detail', slug=slug))
-        #else:
-        url = '{0}#comment'.format(url_for('main.post_detail', slug=slug))
+        if post_type=="page":
+            url = '{0}#comment'.format(url_for('main.page_detail', slug=slug))
+        else:
+            url = '{0}#comment'.format(url_for('main.post_detail', slug=slug))
         msg = 'Succeed to comment, and it will be displayed when the administrator reviews it.'
         flash(msg, 'success')
         return redirect(url)
