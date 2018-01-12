@@ -77,13 +77,11 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="{{ url_for('main.archive') }}">归档</a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">关于</a>
-                </li>
+
                 <!--add more page in the  header-->
                 <li class="nav-item active">
                 {% for page in pages %}   
-                  <a class="nav-link"  href="{{ url_for('main.page_detail', slug=page.slug) }}">{{ page.slug }}</a>
+                  <a class="nav-link"  href="{{ url_for('main.page_detail', slug=page.slug) }}">{{ page.title }}</a>
                 </li>
                 {% endfor %}
                 

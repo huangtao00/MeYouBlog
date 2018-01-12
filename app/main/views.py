@@ -171,7 +171,7 @@ def post_detail(slug, post_type='post', fix=False, is_preview=False):
             url = '{0}#comment'.format(url_for('main.page_detail', slug=slug))
         else:
             url = '{0}#comment'.format(url_for('main.post_detail', slug=slug))
-        msg = 'Succeed to comment, and it will be displayed when the administrator reviews it.'
+        msg = '您的留言已成功提交，待管理员审核通过后将会显示于此，谢谢！'
         flash(msg, 'success')
         return redirect(url)
 
