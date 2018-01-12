@@ -119,8 +119,8 @@
         <nav class="col-sm-3 col-md-3 hidden-xs-down bg-faded sidebar"  >
             <div style="margin-top:120px"> </div>
             {% block left_content %}
-                 <h3 class="cate-tag-show" >分类：</h3>
-                    <div class="left-tag" >
+                 <h3  data-toggle="collapse" data-target="#cateid" class="cate-tag-show">分类：</h3>
+                    <div class="collapse show left-tag" id="cateid" >
                        
                         {% for category in category_cursor %}
                         {% if category and category.name %}
@@ -137,8 +137,8 @@
                         {% endfor %}
                             
                     </div>
-                    <h3 class="cate-tag-show"> 标签：</h3>
-                    <div class="left-tag">    
+                    <h3   data-toggle="collapse" data-target="#tagid" class="cate-tag-show"  > 标签：</h3>
+                    <div class="collapse show left-tag " id="tagid" >    
                         <!--tag list-->
                     
                         {% for tag in tags %}
@@ -161,7 +161,7 @@
                         {% endfor %}
                     </div>
                 <!--segemnt id show-->
-                <div style="padding-left:10px; padding-right:10px;">
+                <div style="padding-left:10px; padding-right:10px;margin-top:10px;">
                 <script src='//w.segmentfault.com/card/1030000000594924.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=333333&btn=009a61&noBtn=0'></script>
                 <div>
                 <hr style="height:2px;border:none;border-top:2px dashed #333;margin:0px 5px 0px 0px;" />

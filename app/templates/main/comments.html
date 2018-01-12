@@ -1,11 +1,13 @@
 <a name="comment"></a>
-<h3>Comments</h3><br>
+
 
 {% import "_msg.html" as messages %}
 {{ messages.render_msg() }}
 
 {% import "_form.html" as forms %}
-<form method="POST" action="#comment">
+<button data-toggle="collapse" data-target="#lmsg" class="btn btn-primary">留言:</button>
+
+<form method="POST" action="#comment" id="lmsg" class="collapse">
     {{ forms.render(form) }}
     <button type="submit" class="btn btn-primary" name="oct-comment" value="oct-comment">Submit</button>
 </form>

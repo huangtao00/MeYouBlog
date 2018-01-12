@@ -2,43 +2,50 @@
 
 {% for field in form %}
   {% if field.type in ['CSRFTokenField', 'HiddenField'] %}
-    {{ field() }}
+      {{ field() }}
   {% elif field.type == "BooleanField" %}
-  <div class="checkbox">
-    <label>
-      {{ field() }} {{ field.label }}
-    </label>
-  </div>
+      <div class="checkbox">
+        <label>
+          {{ field() }} {{ field.label }}
+        </label>
+      </div>
 
   {% elif field.type == "RadioField" %}
-  {{ field.label }}
-    {% for subfield in field %}
-      <div class="radio">
-        <label>{{ subfield }} {{ subfield.label }}</label>
-      </div>
-  {% endfor %}
+      {{ field.label }}
+        {% for subfield in field %}
+          <div class="radio">
+            <label>{{ subfield }} {{ subfield.label }}</label>
+          </div>
+      {% endfor %}
     
 
   {% else %}
-    <div class="clearfix {% if field.errors %}has-error{% endif %} form-group">
 
-      {{ field.label }}
-        {% if field.type == "TextAreaField" %}
-          {{ field(class_="form-control", rows=10) }}
-        {% else %}
-          {{ field(class_="form-control") }}
-        {% endif %}
-        {% if field.errors or field.help_text %}
-          <span class="help-block">
-          {% if field.errors %}
-            {{ field.errors|join(' ') }}
+          {% if field.type == "TextAreaField" %}
+                
+                <div class="clearfix {% if field.errors %}has-error{% endif %} form-group" style="clear:left;width:98%;margin-left:10px;" >
+
+                 {{ field.label }}
+                 {{ field(class_="form-control", rows=10) }}
           {% else %}
-            {{ field.help_text }}
+                <div class="clearfix {% if field.errors %}has-error{% endif %} form-group" style="float:left;margin-left:10px;width:32%;">
+                 {{ field.label }}
+                 {{ field(class_="form-control") }}
           {% endif %}
-          </span>
-        {% endif %}
-    </div>
+          {% if field.errors or field.help_text %}
+                 <div class="clearfix {% if field.errors %}has-error{% endif %} form-group" style="float:left;margin-left:10px;;width:32%;">
+                 {{ field.label }}
+            <span class="help-block">
+            {% if field.errors %}
+              {{ field.errors|join(' ') }}
+            {% else %}
+              {{ field.help_text }}
+            {% endif %}
+            </span>
+          {% endif %}
+      </div>
   {% endif %}
 {% endfor %}
+
 
 {% endmacro %}
