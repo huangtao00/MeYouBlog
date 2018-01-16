@@ -143,14 +143,15 @@ hr.small {
 padding:0px;
 
 position:relative;
-height:110px;
+/*height:110px;*/
 background-color:#000;
 background-image:url(/static/img/blackstyle.jpg);
-background-repeat: repeat-x;
+background-repeat: repeat-x repeat-y;
 width:100%;
 }
 .intro-header > img {
-top:50%;margin-top:-48px; position:absolute;left:50%;margin-left:-500px;width:1000px;height:110px;
+height:110px;
+padding-top:10px;
 }
 
 
@@ -427,3 +428,4 @@ body {
   webkit-tap-highlight-color: #0085a1;
   line-height:1.8;
 }
+
