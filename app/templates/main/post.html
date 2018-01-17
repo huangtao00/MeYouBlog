@@ -3,12 +3,15 @@
 
 {% block custom_head %}
     <link href="{{ url_for('static', filename='css/share.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/codestyle.css') }}" rel="stylesheet">
+
 {% endblock %}
 
 {% block header %}
 {{ super() }}
 
 {% endblock %}
+ 
 {% block main %}
 {{super()}}
 {% endblock %}
@@ -121,6 +124,7 @@
 {% endblock %}
 
 {% block js %}
+{{ super() }}
 {{ moment.include_moment(local_js="//cdn.bootcss.com/moment.js/2.18.1/moment-with-locales.min.js") }}
 <script src="{{ url_for('static', filename='js/share.min.js') }}"></script>
 <script type="text/javascript">
@@ -132,7 +136,20 @@
             $('#donate_guide').addClass('hidden');
         return false
     });
+
+
+ 
+    <!--$(document).ready(function() {  -->
     
+        <!--$('pre').each(function() {  -->
+            <!--$(this).attr('class', 'pretty');  -->
+        <!--});  -->
+      
+    <!--});  -->
+      $('pre').addClass('prettyprint');
+      
+
     
 </script>
+
 {% endblock %}

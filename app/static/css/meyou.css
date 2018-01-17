@@ -61,6 +61,14 @@ border-style:none solid solid solid;
  margin-top:0px;
  margin-bottom:2px;
 }
+.post-content > h1, h2, h3, h4 {
+color:#007;
+}
+
+
+.post-content >p> strong{
+color:#aa0000;
+}
 
 
 .left-tag 
