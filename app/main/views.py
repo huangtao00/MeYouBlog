@@ -208,7 +208,7 @@ def post_detail(slug, post_type='post', fix=False, is_preview=False):
         'wechat': 'main/wechat_detail.html',
     }
     data.update(get_index_page_data())
-    if slug=="About":
+    if slug=="About": #very special page
         return render_template("main/about.html", **data)
     
     return render_template(templates[post_type], **data)
