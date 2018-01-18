@@ -113,3 +113,29 @@ box-shadow: 5px 4px 2px #888888;
 color:#339;
 font-weight:bold;
 }
+.about-head {
+background-color:#789;
+color:#fff;
+font-weight:bold;
+border-radius:7px;
+padding:10px;
+box-shadow: 5px 4px 2px #888888;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .about-head {
+    font-size:16px;
+  }
+}
+.about-lastline {
+clear:both;
+border-bottom:2px #989898 dashed;
+margin-bottom:10px;
+}
+
+@media only screen and (max-width: 768px){
+  .about-lastline {
+   margin-bottom:10px;
+  }
+}
