@@ -58,16 +58,18 @@
                         </div>
                         {% endif %}
                         
-                        <div  style="font-size:15px;float:right;background-color:none;margin-top:10px;margin-right:-55px;color:#203556s;">
+                        <div  style="font-size:15px;float:right;background-color:none;margin-top:10px;margin-right:0px;color:#203556s;">
                             <a  href="{{ url_for('main.author_detail', username=post.author.username) }}">
                             <span style="font-weight:bold; color:#02388e;">{{ post.author }}</span>
                             </a>
                             发表于<span style="font-weight:bold; color:#770000;">{{ moment(post.pub_time).format('YYYY年MM月DD日') }}</span><!--'YYYY/MM/DD-h:mm a' -->
                         </div>
+                        <div style="clear:both"> </div>
                     </div>
             </div>
 
             </div>
+            
          
             
         

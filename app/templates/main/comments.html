@@ -6,8 +6,10 @@
 
 {% import "_form.html" as forms %}
 
-<form method="POST" action="#comment" id="lmsg" class="collapse" style="margin-bottom:-37px;">
+<form method="POST" action="#comment" id="lmsg" class="collapse" style="margin-bottom:-37px;margin-right: -6%;">
+ 
     {{ forms.render(form) }}
+ 
     <button type="submit" class="btn btn-danger" name="oct-comment" value="oct-comment"  style="padding:7px;font-size:16px;float:right;">Submit</button>
     <div style="clear:right;"> </div>
 </form>

@@ -449,3 +449,22 @@ body {
   line-height:1.8;
 }
 
+
+
+.eahome {
+
+  float:left;
+  margin-left:3px;
+  width:30%;
+  margin-left:10px;
+
+
+  }
+  
+  @media only screen and (max-width: 750px){
+  .eahome {
+  clear:both;
+   width:93%;
+   clear:both;
+  }
+}
