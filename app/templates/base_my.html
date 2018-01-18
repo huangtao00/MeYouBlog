@@ -119,51 +119,75 @@
         <nav class="col-sm-3 col-md-3 hidden-xs-down bg-faded sidebar"  >
             <!--<div style="margin-top:120px"> </div>-->
             {% block left_content %}
-                 <h3  data-toggle="collapse" data-target="#cateid" class="cate-tag-show">分类：</h3>
-                    <div class="collapse show left-tag" id="cateid" >
+
+
+                    <div class="list-group" style="margin-left:10px;margin-right:10px;">
+                        <a  class="list-group-item active" data-toggle="collapse" href="#cateshow" style="font-weight:bold;padding:5px;padding-left:8px;background-color:#781;">
+                        分类：
+                        <a>
+                        <div class="panel-collapse collapse show" id="cateshow" style="border: 2px solid rgba(0,0,0,.125);padding:0px 2px 3px 7px;">                        
                        
-                        {% for category in category_cursor %}
-                        {% if category and category.name %}
-                            {% if cur_category == category.name %}
-                                <a href="/?category={{ category.name }}"  class="post-tag badge badge-danger">{{ category.name }} 
-                                <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
-                                <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
-                            {% else %}
-                                <a href="/?category={{ category.name }}" class="post-tag badge badge-success">{{ category.name }} 
-                                <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
-                            {% endif %}
-                        {% endif %}
-                        &nbsp;
-                        {% endfor %}
-                            
-                    </div>
-                    <h3   data-toggle="collapse" data-target="#tagid" class="cate-tag-show"  > 标签：</h3>
-                    <div class="collapse show left-tag " id="tagid" >    
-                        <!--tag list-->
-                    
-                        {% for tag in tags %}
-                             <a href="/?tag={{tag}}" class="post-tag">
-                                <!--if user click the tag-->
-                                {% if tag == cur_tag %}  
-                                <span class="badge badge-pill badge-danger">
-                                    {{ tag }}
-                                    <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
-                                </span>
-                                
-                                {% else %}
-                                <span class="badge badge-pill badge-primary">
-                                    {{ tag }}
-                                </span>
-                                
-                                {% endif %}      
-                            </a>
+                            {% for category in category_cursor %}
+                                {% if category and category.name %}
+                                    {% if cur_category == category.name %}
+                                        <a href="/?category={{ category.name }}"  class="post-tag badge badge-danger">{{ category.name }} 
+                                        <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
+                                        <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
+                                    {% else %}
+                                        <a href="/?category={{ category.name }}" class="post-tag badge badge-success">{{ category.name }} 
+                                        <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
+                                    {% endif %}
+                                {% endif %}
                             &nbsp;
-                        {% endfor %}
+                            {% endfor %}
+                            
+                        </div>
+                    </div>                  
+                    
+                      
+                      
+                      
+                    <div class="list-group" style="margin-left:10px;margin-right:10px;">
+                       <a  class="list-group-item active" data-toggle="collapse" href="#tagshow" style="font-weight:bold;padding:5px;padding-left:8px;background-color:#789;">
+                        标签:
+                      <a>
+                      <div class="panel-collapse collapse show" id="tagshow" style="border: 2px solid rgba(0,0,0,.125);padding:0px 2px 3px 7px;">                        
+                            {% for tag in tags %}
+                                 <a href="/?tag={{tag}}" class="post-tag ">
+                                    <!--if user click the tag-->
+                                    {% if tag == cur_tag %}  
+                                    <span class="badge badge-pill badge-danger" >
+                                        {{ tag }}
+                                        <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
+                                    </span>
+                                    
+                                    {% else %}
+                                    <span class="badge badge-pill badge-primary">
+                                        {{ tag }}
+                                    </span>
+                                    
+                                    {% endif %}      
+                                </a>
+                              
+                            {% endfor %}
+                      </div>
                     </div>
-                <!--segment link show-->
-                <div style="padding-left:10px; padding-right:10px;margin-top:10px;">
-                <script src='//w.segmentfault.com/card/1030000000594924.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=333333&btn=009a61&noBtn=0'></script>
-                <div>
+                    
+                    
+                    <div class="list-group" style="margin-left:10px;margin-right:10px;">
+                      <span href="#" class="list-group-item active" style="font-weight:bold;padding:5px;padding-left:8px;">
+                        友情链接:
+                      </span>
+                      <a href="https://blog.igevin.info/" class="list-group-item list-group-item-action">Gevin`s Blog</a>
+                      <a href="/pages/About/" class="list-group-item list-group-item-action">欢迎留链互粉</a>
+                      <a href="#" class="list-group-item list-group-item-action">etc</a>
+        
+                    </div>                    
+                  
+                    <!--segment link show-->
+                    <div style="padding-left:10px; padding-right:10px;margin-top:0px;">
+                    <script src='//w.segmentfault.com/card/1030000000594924.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=333333&btn=009a61&noBtn=0'></script>
+                    <div>
             
             {% endblock %}
 
