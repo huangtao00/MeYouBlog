@@ -51,11 +51,24 @@
 {% endfor %}
 
 </div>
-<!--comment input textareafield-->
+
+<!--show password input from-->
+{% if form.password %}
+<div class="row">
+                <div class="col-12 comment-info  form-group" >
+                 {{ form.password.label }}
+                 {{ form.password(class_="form-control") }}
+                </div>   
+</div>   
+{% endif %}
+
+<!--show comment input form-->
+{% if form.content %}
 <div class="row">
                 <div class="col-12 comment-info  form-group" >
                  {{ form.content.label }}
                  {{ form.content(class_="form-control", rows=10) }}
                 </div>   
 </div>             
+{% endif %}
 {% endmacro %}

@@ -11,32 +11,45 @@
     <button type="submit" class="btn btn-danger leave-msg-submit" name="oct-comment" value="oct-comment" >提交</button>
     <div style="clear:both;"> </div>
 </form>
-<button  data-toggle="collapse" data-target="#lmsg" class=" btn btn-primary leave-msg-btn" >留言:</button>
+<button  data-toggle="collapse" data-target="#lmsg" class=" btn btn-primary leave-msg-btn" >点我留言:</button>
 
 
 
 
-<!--show comment here-->
-<table>
-    {% for comment in comments %}
-    <tr>
-        <td style="width: 8%">
-            <!-- <img class="media-object" src="http://7tsygu.com1.z0.glb.clouddn.com/user-avatar.jpg" alt="user-avatar"> -->
-            <img class="media-object" src="{{ comment.get_gavatar_url() }}" alt="user-avatar">
-        </td>
-        <td>
-            <h4>{{ comment.author }} 
+<!--show comment here-->    
+
+
+ {% for comment in comments %}
+ <div class="row" style="margin-top:10px;margin-bottom:10px;">
+ <div class="col-2 " > 
+    <div style="float:right;padding-top:13px;">
+       <img  width=50 src="{{ comment.get_gavatar_url() }}" alt="user-avatar">
+    </div>
+ </div>
+ 
+ <div  class="col-10 " style="background-color:#f6f9ff;border-radius:7px;border:2px #ddd solid;" >
+    <div class="row" style="background-color:#ddd;padding:0px 0px 0px 7px;">
+       <div  class="col-9 "  style="padding:0px 0px 0px 4px;font-weight:bold;">
+            <span>{{ comment.author }} 
                 {% if comment.homepage %}
                     <a href="{{ comment.homepage }}" rel="nofollow" target="_blank"><i class="fa fa-home" aria-hidden="true"></i></a>
                 {% endif %}
-            </h4>
-            <div>
-                {{ comment.html_content|safe }} 
-            </div>
-        </td>
-        <td style="width: 5%">
-            <small>{{ comment.pub_time.strftime('%Y/%m/%d') }}</small>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
+            </span>
+       </div>
+       <div  class="col-3 ">
+            <span style="font-size:15px;margin-top:5px;float:right;background-color:none;margin-right:0px;color:#203556;">{{ comment.pub_time.strftime('%Y-%m-%d') }}</span>
+       </div>
+
+   </div>
+   <div class="row" >
+        <div  class="col-12 comment-content "  style="padding:0px 0px 0px 7px;">
+         {{ comment.html_content|safe }} 
+        </div>
+   </div>   
+
+</div> 
+</div> <!--end of row-->
+ {% endfor %}
+
+
+<div style="height:100px;"> </div>

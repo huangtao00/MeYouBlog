@@ -46,6 +46,8 @@
     <!-- Recenet changs in my blog for SEO -->
     <link href="{{ url_for('main.recent_feed') }}" rel="alternate" title="Recent Changes"  type="application/atom+xml">
 
+
+
     {% block custom_head %}{% endblock %}
 
     <!-- Custom Fonts -->
@@ -84,7 +86,7 @@
                   <a class="nav-link"  href="{{ url_for('main.page_detail', slug=page.slug) }}">{{ page.title }}</a>
                 </li>
                 {% endfor %}
-                
+
                 <!--login state-->
                 {% if current_user.is_authenticated %}
                 <li class="nav-item active">
@@ -181,14 +183,14 @@
                       <a href="https://blog.igevin.info/" class="list-group-item list-group-item-action">Gevin`s Blog</a>
                       <a href="/pages/About/" class="list-group-item list-group-item-action">欢迎留链互粉</a>
                       <a href="#" class="list-group-item list-group-item-action">etc</a>
-        
                     </div>                    
                   
                     <!--segment link show-->
                     <div style="padding-left:10px; padding-right:10px;margin-top:0px;">
                     <script src='//w.segmentfault.com/card/1030000000594924.js?w=0&3rd=1&bg=0&bd=DDDDDD&cl=333333&btn=009a61&noBtn=0'></script>
                     <div>
-            
+                    
+
             {% endblock %}
 
         <!--<footer>-->
@@ -202,7 +204,10 @@
                        </a>
                        Copyright &copy; MeYou`s Blog 2018 
                     </p>
-                    <hr style="height:2px;border:none;border-top:2px dashed #777;margin:-10px 5px 0px 0px;" />                    
+                    <hr style="height:2px;border:none;border-top:2px dashed #777;margin:-10px 5px 0px 0px;" />          
+                    <!--music player-->
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=85 height=86 src="//music.163.com/outchain/player?type=2&id=496870798&auto=0&height=66"></iframe>                    </div>
+
                 </div>
             </div>
         <!--</footer>-->
@@ -213,8 +218,6 @@
         <div class="col-sm-8 offset-sm-3 col-md-8 offset-md-3 pt-3">
 
             {% block right_content %}
-            
-            
             
             {% endblock %}
         </div>
