@@ -64,11 +64,12 @@
                             </a>
                             发表于<span style="font-weight:bold; color:#770000;">{{ moment(post.pub_time).format('YYYY年MM月DD日') }}</span><!--'YYYY/MM/DD-h:mm a' -->
                         </div>
-                        <div style="clear:both"> </div>
+                        <div style="clear:both"> 
+                        </div>
                     </div>
             </div>
 
-            </div>
+            
             
          
             
@@ -83,15 +84,15 @@
                     <i class="fa fa-usd"></i> | <i class="fa fa-jpy"></i>
                     </a>                  
                     <br>
-                  <!-- weixin -->
-                  <div id="donate_guide" class="donate_bar center hidden ">
-                      <img src="{{ donation_img_url }}" title="Donate">
-                  </div> 
+                    <!-- weixin -->
+                    <div id="donate_guide" class="donate_bar center hidden ">
+                        <img src="{{ donation_img_url }}" title="Donate">
+                    </div> 
                 </div>
                 <!-- donate --> 
                 
             </div>
-            <br>
+         
             {% endif %}
             
             <!--maybe this will be useful in the future-->
@@ -114,15 +115,17 @@
 
     {% if allow_comment %}
         <div class="row">
-            <div class="col-lg-12  col-md-12  col-sm-12" >
+        <div class="col-lg-12  col-md-12  col-sm-12" >
 
                         {{ comment_html|safe }} 
-            
-            </div>
+        </div>
+           
         </div>
     {% endif %}
 </div>
 {% endblock %}
+
+
 
 {% block js %}
 {{ super() }}

@@ -40,17 +40,17 @@ class WidgetForm(FlaskForm):
     priority = IntegerField(default=1000000)
 
 class CommentForm(FlaskForm):
-    email = StringField('* Email', validators=[Required(), Length(1,128), Email()])
-    author = StringField('* Name', validators=[Required(), Length(1,128)])
-    homepage = StringField('Homepage', validators=[URL(), Optional()])
-    content = TextAreaField('* Comment <small><span class="label label-info">markdown</span></small>', validators=[Required()])
+    email = StringField('* 邮箱：', validators=[Required(), Length(1,128), Email()])
+    author = StringField('* 昵称：', validators=[Required(), Length(1,128)])
+    homepage = StringField('个人主页(可选)：', validators=[URL(), Optional()])
+    content = TextAreaField('* 留言内容 <small><span class="label label-info">(支持MarkDown)</span></small>', validators=[Required()])
     comment_id = HiddenField('comment_id')
 
 class SessionCommentForm(FlaskForm):
-    email = HiddenField('* Email')
-    author = HiddenField('* Name')
-    homepage = HiddenField('Homepage')
-    content = TextAreaField('* Comment', validators=[Required()])
+    email = HiddenField('* 邮箱：')
+    author = HiddenField('* 昵称：')
+    homepage = HiddenField('个人主页(可选)：')
+    content = TextAreaField('* 留言内容 <small><span class="label label-info">(支持MarkDown)</span></small>', validators=[Required()])
     comment_id = HiddenField('comment_id')
 
 class ImportCommentForm(FlaskForm):

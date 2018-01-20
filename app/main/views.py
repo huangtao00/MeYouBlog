@@ -256,17 +256,6 @@ def get_comment_func(comment_type):
 def octblog_comment(post_id, post_title, post_url, comment_shortname, form=None, *args, **kwargs):
     template_name = 'main/comments.html'
     comments = models.Comment.objects(post_slug=post_id, status='approved').order_by('pub_time')
-    # print comments[0].get_gavatar_url()
-    # if not form:
-    #     if session.get('author'):
-    #         print 'session'
-    #         return 'session'
-    #         data = {'author': session['author'], 'email': session['email'],'homepage': session['homepage'],}
-    #         form = forms.SessionCommentForm(obj=data)
-    #     else:
-    #         print 'no session'
-    #         return 'no session'
-    #         form = forms.CommentForm(obj=request.form)
     data = {
         'form': form,
         'comments': comments,

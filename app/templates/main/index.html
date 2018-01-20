@@ -22,14 +22,12 @@
 
 {% block right_content %}
      {% for post in posts.items %}
-            <div class="post-preview" >
-                <div>
+            <div class="post-preview " >
+                <div >
                     <div class="post-title" style="background-color:none" >
-                        
                         <a   href="{{ url_for('main.post_detail', slug=post.slug) }}">   
                                 {{ post.title |title }} 
                         </a>
-    
                     </div>
                     <div class="post-author" style="background-color:none;" >
                         <a  href="{{ url_for('main.author_detail', username=post.author.username) }}">{{ post.author.display_name }}
@@ -51,7 +49,7 @@
                     </div>
                 </div>
                 
-            </div>
+        </div>
                 
                 {% if not loop.last %}
                 {% endif %}

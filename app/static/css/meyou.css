@@ -32,7 +32,7 @@ font-family: 'SimHei',"SimSun", "Helvetica", "STHeiti Light", 'Hiragino Sans GB'
 
 .post-nav {
 
-box-shadow: 3px 7px #777;
+box-shadow: 3px 3px #777;
 border-color:#ddd;
 border-radius:4px 4px;
 /*border-width:2px;*/
@@ -54,7 +54,7 @@ border-width:2px;
 background-color:#FAFDFF;
 margin-top:10px;
 padding: 0px 10px 20px 10px;
-border-style:none solid solid solid;
+border-style:none none solid none;
 
 }
 .post-content >p {
@@ -139,6 +139,14 @@ margin-bottom:10px;
    margin-bottom:10px;
   }
 }
+
+
+@media only screen and (max-width: 768px){
+.comment-info {
+ font-size:10px;
+
+}
+
 
 
 

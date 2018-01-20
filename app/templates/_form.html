@@ -1,5 +1,9 @@
 {% macro render(form) -%}
 
+
+              
+                 
+<div class="row">
 {% for field in form %}
   {% if field.type in ['CSRFTokenField', 'HiddenField'] %}
       {{ field() }}
@@ -21,20 +25,18 @@
 
   {% else %}
 
-          {% if field.type == "TextAreaField" %}
-                
-                <div class="clearfix {% if field.errors %}has-error{% endif %} form-group" style="clear:both;margin-left:10px;;width:92%">
- 
-                 {{ field.label }}
-                 {{ field(class_="form-control", rows=10) }}
-          {% else %}
-                <div class="eahome clearfix  {% if field.errors %}has-error{% endif %} form-group" >
+       
+          <!--name email homepage input field-->
+          {% if field.type == "StringField" %}
+                <div class="col-4  comment-info {% if field.errors %}has-error{% endif %} form-group"  >
                  {{ field.label }}
                  {{ field(class_="form-control") }}
+                </div>                  
           {% endif %}
+          
           {% if field.errors or field.help_text %}
-                 <div class="clearfix {% if field.errors %}has-error{% endif %} form-group" style="float:left;margin-left:10px;;width:33%;">
-                 {{ field.label }}
+            <div class="clearfix comment-info {% if field.errors %}has-error{% endif %} form-group" >
+            {{ field.label }}
             <span class="help-block">
             {% if field.errors %}
               {{ field.errors|join(' ') }}
@@ -42,10 +44,18 @@
               {{ field.help_text }}
             {% endif %}
             </span>
+            </div>
           {% endif %}
-      </div>
+   
   {% endif %}
 {% endfor %}
 
-
+</div>
+<!--comment input textareafield-->
+<div class="row">
+                <div class="col-12 comment-info  form-group" >
+                 {{ form.content.label }}
+                 {{ form.content(class_="form-control", rows=10) }}
+                </div>   
+</div>             
 {% endmacro %}

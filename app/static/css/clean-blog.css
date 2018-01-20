@@ -171,6 +171,8 @@ font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei
 .post-preview {
  padding-bottom:-20px;
  margin-bottom:10px;
+ background-color:#fafffe;
+ 
 }
 .post-preview  a {
   color: #404040;
@@ -179,6 +181,7 @@ font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei
 .post-preview  .post-title {
   font-size: 20px;
   margin-top: 10px;
+  padding-left:5px;
   /*margin-bottom: 10px;*/
   font-weight:bold;
   /*font-style:italic;*/
@@ -201,7 +204,7 @@ text-decoration: none;
 background-color:#f3f3fa;
 padding: 2px 5px 3px 5px;
 border-radius: 5px 5px;
-box-shadow: 7px 10px #777;
+box-shadow: 2px 3px #777;
 margin-top:22px;
 margin-bottom:15px;
 padding-bottom:0px;
@@ -257,6 +260,7 @@ text-align:right;
 font-size:16px;
 float:right;
 padding-top:5px;
+padding-right:10px;
 /*margin-top: 20px;*/
 /*margin-bottom: 10px;*/
 
@@ -435,6 +439,9 @@ form .row:first-child .floating-label-form-group {
 img {
   max-width:100%;
   max-height:100%;
+  display:block;
+  
+  
 }
 img::selection {
   color: white;
@@ -450,22 +457,36 @@ body {
 }
 
 
-
-.eahome {
-
-  float:left;
-  margin-left:3px;
-  width:29%;
-  margin-left:10px;
-
-
-  }
-  
-  @media only screen and (max-width: 750px){
-  .eahome {
-  clear:both;
-   width:93%;
-   clear:both;
-  }
+ .leave-msg-btn{
+  border-radius:5px;
+  background-color:#0275ff;
+  color:#fff;
+  font-weight:bold;
+  font-size:15px;
+  padding:6px;
 }
 
+.leave-msg-submit {
+padding:6px;font-size:15px;float:right;
+border-radius:5px;
+}
+
+@media only screen and (max-width: 768px){
+ .leave-msg-btn{
+  border-radius:5px;
+  background-color:#0275ff;
+  color:#fff;
+  font-weight:bold;
+  font-size:10px;
+  padding:6px;
+}
+}
+
+@media only screen and (max-width: 768px){
+.leave-msg-submit {
+padding:6px;font-size:10px;float:right;
+border-radius:5px;
+
+
+}
+}
