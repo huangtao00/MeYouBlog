@@ -477,14 +477,14 @@ border-radius:5px;
   background-color:#0275ff;
   color:#fff;
   font-weight:bold;
-  font-size:10px;
+  font-size:13px;
   padding:6px;
 }
 }
 
 @media only screen and (max-width: 768px){
 .leave-msg-submit {
-padding:6px;font-size:10px;float:right;
+padding:6px;font-size:13px;float:right;
 border-radius:5px;
 
 

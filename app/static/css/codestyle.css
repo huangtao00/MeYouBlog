@@ -1,25 +1,28 @@
 pre {
 
-        margin: 10px; padding: 10px; 
-        color: #fff; background-color: #313131;
+        margin:10px; 
+        
+
         white-space: pre; text-shadow: 0 1px 0 #222;
-        border-radius: 6px; border-bottom: 2px solid #555;
+        border-radius: 6px;
+        border-bottom: 2px solid #555;
         font: 16px/26px 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
         -moz-box-shadow: 10px 10px 5px #888888; /* 老的 Firefox */
         box-shadow: 7px 7px 5px #aaa;
 }
 
 
+
 .hljs-comment {
-color: #aee;
+/*color: #aee;*/
 font-size:1em;
 font-weight:bold;
 }
 .com {
-color:#fff;
+/*color:#fff;*/
 }
 .hljs-keyword {
-color:#ff7777;
+/*color:#ff7777;*/
 font-weight:bold;
 }
 .post-content p {
