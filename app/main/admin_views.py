@@ -3,7 +3,8 @@
 from __future__ import unicode_literals
 import time, datetime, random, json, re, os
 
-from flask import request, redirect, render_template, url_for, abort, flash, g, current_app, send_from_directory
+
+from flask import request, redirect, render_template, url_for, abort, flash, g, current_app, send_from_directory,jsonify
 from flask.views import MethodView
 # from flask.ext.login import current_user, login_required
 from flask_login import current_user, login_required
@@ -12,7 +13,7 @@ import dateutil.parser
 from . import models, forms, signals
 from accounts.models import User
 from accounts.permissions import admin_permission, editor_permission, writer_permission, reader_permission
-from OctBlog.config import OctBlogSettings
+from OctBlog.config import OctBlogSettings,Config
 
 POST_TYPES = models.POST_TYPE_CHOICES
 # POST_TYPES = OctBlogSettings['post_types']
@@ -108,15 +109,47 @@ class PostStatisticDetail(MethodView):
         data = {'post_statistics':post_statistics, 'trackers':trackers, 'post':post }
 
         return render_template(self.template_name, **data)
-
+class Upload(MethodView):
+    decorators = [login_required, writer_permission.require(401)]
+    #template_name = 'blog_admin/post.html'
+    template_name = 'we do not need template file here' #test the editor plugin
+    
+    def get(self, slug=None, form=None, post_type='get', is_draft=False):
+        #never come here
+        print "using get method to upload an image is impossible"
+        pass
+    def post(self,slug=None, form=None, post_type="post"):
+        #print "you want upload an image here"
+        file=request.files.get('editormd-image-file')
+        if not file:
+            res={
+                'success':0,
+                'message':u'图片格式异常'
+            }
+        else:
+            ex=os.path.splitext(file.filename)[1]
+            filename=datetime.datetime.now().strftime('%Y%m%d%H%M%S')+ex
+            file.save(os.path.join(Config.SAVEPIC_PATH,filename))
+            #返回
+            res={
+                'success':1,
+                'message':u'图片上传成功',
+                'url':url_for('static',filename=Config.BASE_IMG_PATH+filename)
+            }
+        return jsonify(res)    
+    
+    
 class Post(MethodView):
     decorators = [login_required, writer_permission.require(401)]
-    template_name = 'blog_admin/post.html'
-
+    #template_name = 'blog_admin/post.html'
+    template_name = 'blog_admin/post_editor.html' #test the editor plugin
+    
     def get(self, slug=None, form=None, post_type='post', is_draft=False):
+        """
+        new post page
+        """
         edit_flag = slug is not None or False
         post = None
-
         if edit_flag:
             try:
                 post = models.Draft.objects.get(slug=slug)
@@ -132,12 +165,14 @@ class Post(MethodView):
         if not form:
             if post:
                 # post = models.Post.objects.get_or_404(slug=slug)
+                print "edit post",post_type
                 post.post_id = str(post.id)
                 post.tags_str = ', '.join(post.tags)
                 form = forms.PostForm(obj=post)
             else:
+                print "new post", post_type
                 form = forms.PostForm(post_type=post_type)
-
+                
         categories = models.Post.objects(post_type=post_type).distinct('category')
         tags = models.Post.objects(post_type=post_type).distinct('tags')
         
@@ -151,10 +186,13 @@ class Post(MethodView):
 
 
     def post(self, slug=None, post_type='post', is_draft=False):
+        """
+        publish the post content
+        """
         article_model = article_models['post'] if request.form.get('publish') else article_models['draft']
 
         form = forms.PostForm(obj=request.form)
-        if not form.validate():
+        if not form.validate(): #fill the form
             return self.get(slug, form)
 
         # if slug:

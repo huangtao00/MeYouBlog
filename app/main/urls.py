@@ -22,6 +22,8 @@ main.errorhandler(401)(errors.handle_unauthorized)
 main.add_url_rule('/<path:invalid_path>', 'handle_unmatchable', errors.handle_unmatchable)
 
 
+        
+        
 blog_admin = Blueprint('blog_admin', __name__)
 
 blog_admin.add_url_rule('/', view_func=admin_views.AdminIndex.as_view('index'))
@@ -30,6 +32,7 @@ blog_admin.add_url_rule('/posts/', view_func=admin_views.PostsList.as_view('post
 blog_admin.add_url_rule('/posts/draft/', view_func=admin_views.DraftList.as_view('drafts'))
 blog_admin.add_url_rule('/new-post/', view_func=admin_views.Post.as_view('new_post'))
 blog_admin.add_url_rule('/posts/<slug>/', view_func=admin_views.Post.as_view('edit_post'))
+blog_admin.add_url_rule('/posts/upload/',view_func=admin_views.Upload.as_view('upload'))
 
 blog_admin.add_url_rule('/pages/', view_func=admin_views.PostsList.as_view('pages'), defaults={'post_type':'page'})
 blog_admin.add_url_rule('/pages/draft/', view_func=admin_views.DraftList.as_view('page_drafts'), defaults={'post_type':'page'})

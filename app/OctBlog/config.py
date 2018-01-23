@@ -14,7 +14,7 @@ def get_env_value(key, default_value=''):
     else:
         return os.environ.get(key, default_value)
 
-
+BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 OctBlogSettings = {
     'post_types': ('post', 'page'), # deprecated
     'allow_registration': os.environ.get('allow_registration', 'true').lower() == 'true',
@@ -77,7 +77,8 @@ OctBlogSettings = {
     'daovoice':{
         'allow_daovoice': (os.environ.get('allow_daovoice', 'false').lower() == 'true' and os.environ.get('daovoice_app_id') is not None),
         'app_id': os.environ.get('daovoice_app_id'),
-    }
+    },
+    "":{}
 
 }
 
@@ -93,6 +94,10 @@ class Config(object):
     TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates').replace('\\', '/')
     STATIC_PATH = os.path.join(BASE_DIR, 'static').replace('\\', '/')
     EXPORT_PATH = os.path.join(BASE_DIR, 'exports').replace('\\', '/')
+    BASE_IMG_PATH="upload_image/"
+    SAVEPIC_PATH=os.path.join(BASE_DIR, 'static/'+BASE_IMG_PATH).replace('\\', '/')
+    if not os.path.exists(SAVEPIC_PATH):
+        os.makedirs(SAVEPIC_PATH)
 
     if not os.path.exists(EXPORT_PATH):
         os.makedirs(EXPORT_PATH)
