@@ -210,6 +210,7 @@ class Post(MethodView):
         post.title = form.title.data.strip()
         post.slug = form.slug.data.strip()
         post.weight = form.weight.data
+        
         post.raw = form.raw.data.strip()
         abstract = form.abstract.data.strip()
         post.abstract = abstract if abstract else post.raw[:140]

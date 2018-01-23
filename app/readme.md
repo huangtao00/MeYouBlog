@@ -1,71 +1,54 @@
-Welcome to OctBlog
+Welcome to MeYouBlog
 ====================
 
->OctBlog is powered by Flask and MongoDB, here are some instructions on how to run it.
+>MeYouBlog is an open source blog powered by Flask and MongoDB,modified from [OctBlog](https://github.com/flyhigher139/OctBlog) by MeYou.
+Based on OctBlog, I customized templates sytle in my favor and also added some plugins in the blog (like adding editor.md and supporting uploading from  the local image file), will add more features in the future.
+here are some instructions on how to run it.
 
-## How to run it ?
+### 1:How to power it?
 
-### Install requirements
+Install requirements
 
-```
+```bash
 (sudo) pip install -r requirements.txt
+
+#install mongodb and check it out
+sudo apt-get install mongodb
+ps aux|grep mongodb
 ```
 
-### Create/update datebase
 
-MongoDB is flexible, migrating database is not necessary.
-
-
-### Run OctBlog
+### 2:Run OctBlog
 
 Run OctBlog with this command:
 
 ```bash
+git clone https://github.com/huangtao00/MeYouBlog.git
+cd MeyouBlog/app
 python manage.py runserver
-```
-
-Then you can visit the blog with url: `http://127.0.0.1:5000`
-
-If you want to customize `manage.py`, checkout [Flask-Script](https://flask-script.readthedocs.org/en/latest/)
-
-### Get started with OctBlog
-
-#### 1\. Create a superuser to administrate OctBlog
-
-Visit the following url and create a superuser
-
-`http://127.0.0.1:5000/accounts/registration/su`
-
-If the url is forbidden, you need to modify your configurations to allow the creation.
-
-#### 2\. Administrate OctBlog
-
-The admin home is: `http://127.0.0.1:5000/admin`
-
-You will be redirected to login page if you haven't logged in
-
-#### 3\. Modify the default configurations
-
-You either change settings in `app/OctBlog/config.py` file, or set the environment variables defined in this file.
-
-**Setting environment variables is recommended, and once the configuration is changed, you need to restart the service.**
-
-
-### OctBlog settings
-
-By default, OctBlog uses `dev` settings, `prd` is used in product environment. You can overwrite these settings or create your custom settings and switch to it.
-
-#### How to switch settings
-
-If you don't want to use the default settings, just set a settings environment vairable.
-
-I usually set the environment vairable in bash with `export` command. For example, if I want to run OctBlog in product environment, I will switch to prd settings like this:
 
 ```
-export config=prd
+or like this:(debug html,css,js file using livereload)
+```bash
+git clone https://github.com/huangtao00/MeYouBlog.git
+cd MeyouBlog/app
+python manage.py live
 ```
 
-## Deploy OctBlog
+Then you can visit the blog with url: `http://127.0.0.1:5000` or `http://127.0.0.1:5500` (if livereload)
+
+#### 3:Useful link for MeYouBlog
+```
+#registor an administator:
+http://127.0.0.1:5000/accounts/registration/su
+#login with your account,then write your own post right now
+http://127.0.0.1:5000/accounts/login/　
+```
+#### 4: Modify the default configurations
+
+You can change settings in `app/OctBlog/config.py` file if you want.
+
+#### 5: Deploy OctBlog
 
 I recommend you to deploy OctBlog with `Ubuntu + nginx + gunicorn`.
 
@@ -75,8 +58,7 @@ I recommend you to deploy OctBlog with `Ubuntu + nginx + gunicorn`.
 
 ### What's more
 
-If you find a bug or want to add a new feature, just issue me.
+feel free to use this blog, do whatever you want. if you have any questions, let me known.
 
-Want to contribute? Please fork OctBlog and pull request to me.
+Want to contribute? Please fork MeYouBlog and pull request to me.
 
-I'm not good at frontend development, so I used a free bootstrap blog theme. If you can redesign the blog theme and admin interface, I'll appriciate your work very much!
