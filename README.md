@@ -1,7 +1,7 @@
 Welcome to [MeYouBlog](http://www.meyoublog.com/)
 ====================
 
->MeYouBlog is an open source blog powered by Flask and MongoDB,modified from [OctBlog](https://github.com/flyhigher139/OctBlog) by MeYou.
+>MeYouBlog is an open source blog powered by Flask and MongoDB, modified from [OctBlog](https://github.com/flyhigher139/OctBlog) by MeYou.
 Based on OctBlog, I customized templates style in my favor and also added some plugins in the blog (like adding editor.md and supporting uploading from  the local image files), will add more features in the future.
 here are some instructions on how to run it.
 
