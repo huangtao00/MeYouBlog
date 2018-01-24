@@ -10,11 +10,13 @@ here are some instructions on how to run it.
 Install requirements
 
 ```bash
-(sudo) pip install -r requirements.txt
-
 #install mongodb and check it out
 sudo apt-get install mongodb
 ps aux|grep mongodb
+git clone https://github.com/huangtao00/MeYouBlog.git
+cd MeyouBlog
+pip install -r requirements.txt
+cd app
 ```
 
 
@@ -23,15 +25,11 @@ ps aux|grep mongodb
 Run MeYouBlog with this command:
 
 ```bash
-git clone https://github.com/huangtao00/MeYouBlog.git
-cd MeyouBlog/app
 python manage.py runserver
 
 ```
 or like this:(debug html,css,js file using livereload)
 ```bash
-git clone https://github.com/huangtao00/MeYouBlog.git
-cd MeyouBlog/app
 python manage.py live
 ```
 
