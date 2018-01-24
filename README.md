@@ -59,5 +59,5 @@ feel free to use this blog, do whatever you want. if you have any questions, let
 Want to contribute? Please fork MeYouBlog and pull request to me.
 
 ### last but not least (*screenshot*)
-![](https://github.com/huangtao00/MeYouBlog/blob/master/left.png)
-![](https://github.com/huangtao00/MeYouBlog/blob/master/right.png)
+![](https://github.com/huangtao00/MeYouBlog/raw/master/left.png)
+![](https://github.com/huangtao00/MeYouBlog/raw/master/right.png)
