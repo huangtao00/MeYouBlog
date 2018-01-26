@@ -76,6 +76,19 @@ color:#003;
 .post-content >p> strong{
 color:#aa0000;
 }
+@media only screen and (max-width: 768px) {
+.post-content > p, ol{
+font-size:0.8em;
+}
+
+.post-content > h3,h4{
+font-size:0.9em;
+}
+
+.post-content > pre>code{
+font-size:0.9em;
+}
+}
 
 
 .left-tag 
@@ -152,6 +165,7 @@ margin-bottom:10px;
 .comment-info {
  font-size:10px;
 
+}
 }
 
 section {
