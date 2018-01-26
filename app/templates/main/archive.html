@@ -16,31 +16,23 @@
             <div class="row" >
                     <div class="col-lg-12  col-md-12  col-sm-12 post-nav" >
                   <!-- <img src="..." alt="..."> -->
-                    <div style="display:inline;font-weight:bold;float:left;">
+                    <div class="archive-title" >
                         <a href="{{ url_for('main.post_detail', slug=post.slug) }}"><i class="fa fa-file-word-o" aria-hidden="true"></i> {{ post.title| title }}</a>
                     </div>
-                    <div style="float:left;font-size:10px;padding-top:15px;color:#000;">
+                    <div class="archive-catetag" >
                         <a href="?category={{ post.category }}"><span class="badge  badge-primary">{{ post.category }}</span>&nbsp;</a>
-                    </div> 
-                    
-                    <div style="float:left;font-size:10px;padding-top:15px;color:#000;">
                         {% for tag in post.tags %} 
                         <a href="{{ url_for('main.index') }}?tag={{ tag }}"> 
                         <span class="  badge badge-warning">
                         {{ tag }}</span>  
-                        </a>  {% endfor %}               
-                    </div>                
-                    <div style="float:right;font-size:15px;padding-top:15px;font-weight:bold;margin-bottom:0px;color:#918c8e">
+                        </a>  
+                        {% endfor %}  
+                    </div> 
+                                  
+                    <div class="archive-meta" >
                        <i class="fa fa-clock-o fa-1g" aria-hidden="true"> </i> {{ moment(post.pub_time).format('YYYY年MM月DD日') }}<!--'YYYY/MM/DD-h:mm a' -->
                     </div>
-                    <br>
                     
-                    <!--<p class="post-author-title">-->
-                    <!--作者：<span>{{ post.author }}</span>-->
-                    <!--发表时间：-->
-    
-                    <!--文章摘要：<span class="post-abstract" >{{ post.content_html[:200] |striptags + " ......" }}</span>-->
-                    <!--</p>-->
                 </div>       
             </div> <!--end of row-->
             <hr style="height:2px;border-top:2px dashed #aaa;margin:-1px -20px 0px -10px;" />    

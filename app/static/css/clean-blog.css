@@ -297,20 +297,52 @@ text-decoration:none;
 .caption > h3 > a {
 font-style: italic;
 }
+.archive-meta {
+ float:right;font-size:15px;padding-top:15px;font-weight:bold;margin-bottom:0px;color:#918c8e
+}
+archive-catetag {
+float:left;font-size:10px;padding-top:15px;color:#000;
+}
+
+.archive-title {
+display:inline;font-weight:bold;float:left;
+}
+
 
 @media only screen and (max-width: 768px) {
+
   .post-meta {
   color: #000033;
   font-size:0.7em;
   font-style: normal;
   font-weight:bold;
+}
 
 
+.archive-title { 
+clear:both;
+}
+
+.archive-catetag {
+float:left;
+  font-size:0.8em;
+  font-style: normal;
+  font-weight:bold;
+}
+.archive-catetag > span{
+ margin-top:0px;
+}
+
+
+.archive-meta {
+ float:right;
+  padding-top:0px;
+  float:right;
 }
   .post-meta > a > span{
   text-decoration: none;
   /*color: #770000;*/
-  font-size:0.7em;
+  font-size:12px;
 }
   .post-preview , .pagination {
    padding-top:0px;
