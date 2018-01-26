@@ -320,11 +320,12 @@ display:inline;font-weight:bold;float:left;
 
 
 .archive-title { 
-clear:both;
+  clear:both;
+  font-size:0.9em;
 }
 
 .archive-catetag {
-float:left;
+  float:left;
   font-size:0.8em;
   font-style: normal;
   font-weight:bold;
