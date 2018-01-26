@@ -248,10 +248,10 @@ padding-bottom:0px;
 }
  .post-meta {
   color: #000033;
-  font-size:19px;s
+  font-size:19px;
   font-style: normal;
   font-weight:bold;
-
+  margin-left:-10px;
 
 }
 .post-meta > a {
@@ -300,6 +300,19 @@ font-style: italic;
 }
 
 @media only screen and (max-width: 768px) {
+  .post-meta {
+  color: #000033;
+  font-size:0.7em;
+  font-style: normal;
+  font-weight:bold;
+
+
+}
+  .post-meta > a {
+  text-decoration: none;
+  color: #770000;
+  font-size:0.5em;
+}
   .post-preview , .pagination {
    padding-top:0px;
    margin-left:-7px;
