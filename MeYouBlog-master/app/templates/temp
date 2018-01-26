@@ -1,0 +1,105 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1">
+            {% for post in posts.items %}
+            <div class="post-preview">
+                <a href="{{ url_for('main.post_detail', slug=post.slug) }}">
+                    <h2 class="post-title">
+                        {{ post.title |title }}
+                    </h2>
+                </a>
+                <p class="post-meta">
+                分类： <a href="?category={{ post.category }}">{{ post.category }}</a>
+                标签：{% for tag in post.tags %} <a href="{{ url_for('main.index') }}?tag={{ tag }}">{{ tag }}</a>  {% endfor %}
+                </p>
+                <hr style="height:2px;border:none;border-top:2px dashed #333;margin:30px 5px -20px 0px;" />
+                
+                <p class="post-subtitle">
+                   摘要：<span> {{ post.abstract }}<span>
+                </p>
+                <hr style="height:2px;border:none;border-top:2px solid #dfdfdf;margin:-20px 5px -25px 71%;" />
+
+                <p class="post-author" ><a href="{{ url_for('main.author_detail', username=post.author.username) }}">{{ post.author.display_name }}</a> 发表于 {{ moment(post.pub_time).format('YYYY/MM/DD') }}</p>
+                <hr style="height:2px;border:none;border-top:2px solid #ddd;margin:-20px 5px -25px 0px;" />
+     
+            </div>
+            {% if not loop.last %}
+            <hr>
+            {% endif %}
+            {% else %}
+                <p class="post-subtitle">
+                    No articles found here
+                </p>
+            {% endfor %}
+            <!-- Pager -->
+            <ul class="pager">
+                {% if posts.has_next %}
+                <li class="next">
+                    <a href="?page={{ posts.next_num }}
+                        {%- if cur_category %}&category={{ cur_category }}{% endif %}
+                        {%- if cur_tag %}&tag={{ cur_tag }}{% endif %}">Older Posts &rarr;</a>
+                </li>
+                {% endif %}
+                {% if posts.has_prev %}
+                    <li class="next"><a href="?page={{ posts.prev_num }}
+                        {%- if cur_category %}&category={{ cur_category }}{% endif %}
+                        {%- if keywords %}&keywords={{ keywords }}{% endif %}
+                        {%- if cur_tag %}&tag={{ cur_tag }}{% endif %}">Previous Posts</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        
+
+        <div class="col-lg-3 col-md-2">
+            
+            <!-- <hr> -->
+            <br>
+
+            <h3>Tags</h3><hr/>
+            {% for tag in tags %}
+                <a href="?tag={{tag}}" class="post-tag">
+                    {% if tag == cur_tag %}
+                    <span class="label label-primary">
+                        {{ tag }}
+                        <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
+                    </span>
+                    
+                    {% else %}
+                    <span class="label label-default">
+                        {{ tag }}
+                    </span>
+                    
+                    {% endif %}
+                    
+                </a>
+                &nbsp;
+            {% endfor %}
+
+            
+            <h3>Category</h3><hr/>
+            <div class="list-group">
+                {% for category in category_cursor %}
+                {% if category and category.name %}
+                    {% if cur_category == category.name %}
+                        <a href="?category={{ category.name }}" class="list-group-item category-list active">{{ category.name }} 
+                        <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
+                        <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
+                    {% else %}
+                        <a href="?category={{ category.name }}" class="list-group-item category-list ">{{ category.name }} 
+                        <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
+                    {% endif %}
+                {% endif %}
+                {% endfor %}
+            </div>
+
+
+            {% for widget in widgets %}
+            <h3>{{ widget.title | safe }}</h3><hr/>
+            <div class="list-group">
+                {{ widget.html_content | safe }}
+            </div>
+            {% endfor %}
+                        
+        </div>
+    </div>
+</div>

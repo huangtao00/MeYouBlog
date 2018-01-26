@@ -1,0 +1,74 @@
+{% macro render(form) -%}
+
+
+              
+                 
+<div class="row">
+{% for field in form %}
+  {% if field.type in ['CSRFTokenField', 'HiddenField'] %}
+      {{ field() }}
+  {% elif field.type == "BooleanField" %}
+      <div class="checkbox">
+        <label>
+          {{ field() }} {{ field.label }}
+        </label>
+      </div>
+
+  {% elif field.type == "RadioField" %}
+      {{ field.label }}
+        {% for subfield in field %}
+          <div class="radio">
+            <label>{{ subfield }} {{ subfield.label }}</label>
+          </div>
+      {% endfor %}
+    
+
+  {% else %}
+
+       
+          <!--name email homepage input field-->
+          {% if field.type == "StringField" %}
+                <div class="col-4  comment-info {% if field.errors %}has-error{% endif %} form-group"  >
+                 {{ field.label }}
+                 {{ field(class_="form-control") }}
+                </div>                  
+          {% endif %}
+          
+          {% if field.errors or field.help_text %}
+            <div class="clearfix comment-info {% if field.errors %}has-error{% endif %} form-group" >
+            {{ field.label }}
+            <span class="help-block">
+            {% if field.errors %}
+              {{ field.errors|join(' ') }}
+            {% else %}
+              {{ field.help_text }}
+            {% endif %}
+            </span>
+            </div>
+          {% endif %}
+   
+  {% endif %}
+{% endfor %}
+
+</div>
+
+<!--show password input from-->
+{% if form.password %}
+<div class="row">
+                <div class="col-12 comment-info  form-group" >
+                 {{ form.password.label }}
+                 {{ form.password(class_="form-control") }}
+                </div>   
+</div>   
+{% endif %}
+
+<!--show comment input form-->
+{% if form.content %}
+<div class="row">
+                <div class="col-12 comment-info  form-group" >
+                 {{ form.content.label }}
+                 {{ form.content(class_="form-control", rows=10) }}
+                </div>   
+</div>             
+{% endif %}
+{% endmacro %}

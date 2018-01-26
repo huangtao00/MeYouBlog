@@ -1,0 +1,77 @@
+{% extends 'base_my.html' %}
+
+{% block title %} Author | {{ user.display_name }} {% endblock %}
+{% block right_content %}
+{{ super() }}
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12  col-md-12  col-sm-12">
+                    <div class="row">
+                        <h3>About {{ user.display_name }} </h3>
+                        
+                        <dl class="dl-horizontal">
+                            <dt>Username:</dt>
+                            <dd>{{ user.username }}</dd>
+                        </dl>
+                        <dl class="dl-horizontal">
+                            <dt>Biography:</dt>
+                            <dd>{{ user.biography }}</dd>
+                        </dl>
+                        <dl class="dl-horizontal">
+                            <dt>Social Network:</dt>
+                            <dd>
+                                {% if user.social_networks['github']['url'] %}
+                                    <a href='{{ user.social_networks["github"]["url"] }}'><i class="fa fa-github fa-lg"></i></a>
+                                {% endif %}
+                      
+                                {% if user.social_networks['weixin']['url'] %}
+                                    <a id="btn_weixin" href='{{ user.social_networks["weixin"]["url"] }}'><i class="fa fa-weixin fa-lg"></i></a>
+                                    <!-- weixin -->
+                                    <div id="weixin" class="hidden">
+                                        <br>
+                                        <img src="{{ user.social_networks["weixin"]["url"] }}?imageView/2/w/150" title="weixin">
+                                    </div> 
+                                {% endif %}                
+                            </dd>
+                        </dl>
+                        <dl class="dl-horizontal">
+                            <dt>Homepage:</dt>
+                            <dd>
+                                {% if user.homepage_url %}
+                                <a href="{{ user.homepage_url }}"><i class="fa fa-home fa-lg"></i></a> {{ user.homepage_url }}
+                                {% else %}
+                                Not yet
+                                {% endif %}
+                            </dd>
+                        </dl>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>    
+       
+ 
+    <hr>
+
+{% endblock %}
+
+
+{% block main %}
+{{ super() }}
+   
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+    $('#btn_weixin').on('click', function(event){
+        if($('#weixin').hasClass('hidden'))
+            $('#weixin').removeClass('hidden');
+        else
+            $('#weixin').addClass('hidden');
+        return false
+    })
+    
+    
+</script>
+{% endblock %}

@@ -1,0 +1,276 @@
+.category-list{
+    border: 0px;
+}
+
+.group-list{
+    border: 0px;
+}
+
+.post-author-title  {
+text-align:left;
+font-size:15px;
+color:#000077;
+
+}        
+
+.post-author-title>span { 
+font-weight:bold;  
+font-size:16px;   
+text-align:left; 
+color:black;  
+padding-bottom:0px; 
+margin-bottom:0px; 
+
+} 
+span.post-abstract {
+font-size:15px;
+text-align:left;
+font-weight:normal; 
+font-family: 'SimHei',"SimSun", "Helvetica", "STHeiti Light", 'Hiragino Sans GB',  "sans-serif", "Arial", "Microsoft YaHei";
+/*font-style: italic;*/
+}  
+
+.post-nav {
+
+box-shadow: 3px 3px #777;
+border-color:#ddd;
+border-radius:4px 4px;
+/*border-width:2px;*/
+background-color:#f7f7ff;
+margin-bottom:4px;
+padding-left:10px;
+padding-right:5px;
+margin-left:3px;
+/*font-weight:bold;*/
+font-size:18px;
+}
+.post-content {
+
+/*height:350px;*/
+box-shadow: 3px 7px #777;
+border-color:#9ab;
+border-radius:0px 0px 10px 10px;
+border-width:2px;
+background-color:#FAFDFF;
+padding: 10px 10px 20px 10px;
+border-style:none none solid none;
+
+}
+.post-content > p {
+ margin-top:0px;
+ margin-bottom:2px;
+
+}
+
+.post-content >p > img {
+   position: relative;
+   margin-left: auto;
+   margin-right: auto;
+   /*top: 50%;*/
+}
+.post-content > h1, h2, h3, h4 {
+color:#003;
+}
+
+
+.post-content >p> strong{
+color:#aa0000;
+}
+@media only screen and (max-width: 768px) {
+.post-content > p, ol{
+font-size:0.8em;
+margin-bottom:10px;
+}
+
+.post-content > h3,h4{
+font-size:0.9em;
+}
+
+.post-content > pre>code{
+font-size:0.9em;
+}
+}
+
+
+.left-tag 
+{
+padding-left:10px;
+
+padding:0px 0px 4px 20px;
+margin: 0px 10px 20px 10px;
+border-style:none solid solid solid;
+border-width:2px;
+background-color:#f0f0f1;
+border-color:#999;
+border-radius: 5px 5px;
+box-shadow: 2px 6px #444;
+
+}
+
+
+.cate-tag-show 
+{
+
+color: #000033;
+margin-bottom:0px;
+padding-bottom:10px;
+margin-left:20px;
+font-size:20px;
+
+}
+
+.about-tag {
+margin-bottom:10px;
+display:inline-block;
+background-color:#0593D3;
+color:#fff;
+font-weight:bold;
+border-radius:7px;
+padding:3px;
+box-shadow: 5px 4px 2px #888888;
+}
+
+.tag-one a {
+color:#339;
+font-weight:bold;
+}
+.about-head {
+background-color:#789;
+color:#fff;
+font-weight:bold;
+border-radius:7px;
+padding:10px;
+box-shadow: 5px 4px 2px #888888;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .about-head {
+    font-size:16px;
+  }
+}
+.about-lastline {
+clear:both;
+border-bottom:2px #989898 dashed;
+margin-bottom:10px;
+}
+
+@media only screen and (max-width: 768px){
+  .about-lastline {
+   margin-bottom:10px;
+  }
+}
+
+
+@media only screen and (max-width: 768px){
+.comment-info {
+ font-size:10px;
+
+}
+}
+
+section {
+    background: rgba(255,255,255,0.9);
+    padding-right: 85px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 100%;
+    width: 60%;
+    margin: auto;
+    margin-top: -20px;
+    border-radius: 5px;
+    border: 1px solid #666;
+}
+
+.comment {
+    overflow: hidden;
+    padding: 0 0 1em;
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 1em;
+    margin-left: 40px;
+    *zoom: 1;
+    width: 100%;
+}
+
+.comment-img {
+    float: left;
+    margin-right: 33px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.comment-img img { display: block }
+
+.comment-body { overflow: hidden }
+
+.comment .text {
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.comment .text p:last-child { margin: 0 }
+
+.comment .attribution {
+    margin: 0.5em 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Decoration */
+
+.comments, .comment { position: relative }
+
+.comments:before, .comment:before, .comment .text:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 65px;
+}
+
+.comments:before {
+    width: 3px;
+    left: 105px;
+    bottom: 0px;
+    background: rgba(0,0,0,0.1);
+}
+
+.comment:before {
+    width: 9px;
+    height: 9px;
+    border: 3px solid #fff;
+    border-radius: 100px;
+    margin: 16px 0 0 -6px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+    background: #ccc;
+}
+
+.comment:hover {
+    /*  cursor: url('../images/FB_CUR.cur');  See the result on http://lab.web-gate.fr/timeline/ */ 
+    cursor: cell; /* This line is for the cursor */
+}
+
+.comment:hover:before { background: #3b5998 }
+
+.comment .text:before {
+    top: 18px;
+    left: 78px;
+    width: 9px;
+    height: 9px;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #e5e5e5;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+
+
+
+
+
+
