@@ -52,8 +52,7 @@ border-color:#9ab;
 border-radius:0px 0px 10px 10px;
 border-width:2px;
 background-color:#FAFDFF;
-margin-top:10px;
-padding: 0px 10px 20px 10px;
+padding: 10px 10px 20px 10px;
 border-style:none none solid none;
 
 }
@@ -76,6 +75,19 @@ color:#003;
 
 .post-content >p> strong{
 color:#aa0000;
+}
+@media only screen and (max-width: 768px) {
+.post-content > p, ol{
+font-size:0.8em;
+}
+
+.post-content > h3,h4{
+font-size:0.9em;
+}
+
+.post-content > pre>code{
+font-size:0.9em;
+}
 }
 
 
@@ -153,6 +165,7 @@ margin-bottom:10px;
 .comment-info {
  font-size:10px;
 
+}
 }
 
 section {

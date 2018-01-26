@@ -14,7 +14,6 @@ def get_env_value(key, default_value=''):
     else:
         return os.environ.get(key, default_value)
 
-BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 OctBlogSettings = {
     'post_types': ('post', 'page'), # deprecated
     'allow_registration': os.environ.get('allow_registration', 'true').lower() == 'true',
@@ -39,7 +38,7 @@ OctBlogSettings = {
     'pagination':{
         'per_page': int(os.environ.get('per_page', 10)),
         'admin_per_page': int(os.environ.get('admin_per_page', 10)),
-        'archive_per_page': int(os.environ.get('admin_per_page', 10)),
+        'archive_per_page': int(os.environ.get('admin_per_page', 15)),
     },
     'blog_comment':{
         'allow_comment': os.environ.get('allow_comment', 'true').lower() == 'true',
@@ -86,11 +85,9 @@ class Config(object):
     DEBUG = False
     TESTING = False
 
-    BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-    #we run manager.py, so the __file__=config.pyc, so the base_dir is the path of manager.py
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'fjdljLJDL08_80jflKzcznv*c'
     MONGODB_SETTINGS = {'DB': 'OctBlog'}
-
+    BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
     TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates').replace('\\', '/')
     STATIC_PATH = os.path.join(BASE_DIR, 'static').replace('\\', '/')
     EXPORT_PATH = os.path.join(BASE_DIR, 'exports').replace('\\', '/')
