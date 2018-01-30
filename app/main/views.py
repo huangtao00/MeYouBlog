@@ -94,6 +94,7 @@ def get_index_page_data():
     data['posts'] = posts
     data['cur_category'] = cur_category
     data['category_cursor'] = category_cursor
+    #tags=filter(None, tags)    #remove the empty string
     data['cur_tag'] = cur_tag
     data['tags'] = tags
     data['keywords'] = keywords
