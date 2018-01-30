@@ -134,10 +134,10 @@
                                     {% if cur_category == category.name %}
                                         <a href="/?category={{ category.name }}"  class="post-tag badge badge-danger">{{ category.name }} 
                                         <small><span class="glyphicon glyphicon-remove small rm-filter" aria-hidden="true"></span></small>
-                                        <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
+                                        &nbsp;{{ category.count }}&nbsp;</a>
                                     {% else %}
                                         <a href="/?category={{ category.name }}" class="post-tag badge badge-success">{{ category.name }} 
-                                        <span class="badge">&nbsp;{{ category.count }}&nbsp;</span></a>
+                                        &nbsp;{{ category.count }}&nbsp;</a>
                                     {% endif %}
                                 {% endif %}
                             &nbsp;
