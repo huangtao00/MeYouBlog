@@ -325,6 +325,7 @@ display:inline;font-weight:bold;float:left;
 }
 
 .archive-catetag {
+  padding-top: 0px;
   float:left;
   font-size:0.8em;
   font-style: normal;
