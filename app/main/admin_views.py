@@ -119,7 +119,7 @@ class Upload(MethodView):
         print "using get method to upload an image is impossible"
         pass
     def post(self,slug=None, form=None, post_type="post"):
-        #print "you want upload an image here"
+        print "you want upload an image here"
         file=request.files.get('editormd-image-file')
         if not file:
             res={
