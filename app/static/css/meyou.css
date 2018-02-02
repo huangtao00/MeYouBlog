@@ -70,9 +70,26 @@ border-style:none none solid none;
    /*top: 50%;*/
 }
 .post-content > h1, h2, h3, h4 {
-color:#003;
+color:#222;
+/*font-weight:normal;*/
 }
 
+.post-content > h4
+{
+font-size:1.2em;
+}
+.post-content > h3
+{
+font-size:1.4em;
+}
+.post-content > h2
+{
+font-size:1.6em;
+}
+.post-content > h1
+{
+font-size:1.8em;
+}
 
 .post-content >p> strong{
 color:#aa0000;

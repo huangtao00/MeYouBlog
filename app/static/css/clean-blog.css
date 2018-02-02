@@ -6,8 +6,7 @@
 
 body {
   /*font-family: 'Lora', 'Times New Roman', serif;*/
-  font-family: "sans-serif","lucida grande", "lucida sans unicode", lucida, helvetica, "STHeiti Light", "Microsoft YaHei", "WenQuanYi Micro Hei";
-  font-size: 18px;
+    font-family: -apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;  font-size: 18px;
   /*color: #404040;*/
   background-color:#eee;
 }
@@ -155,14 +154,21 @@ padding-top:10px;
 }
 
 
-
+.post-title-bg {
+/*background-color:#fff;*/
+/*margin-top:5px;*/
+padding:10px 0px 0px 0px;
+border-radius:10px;
+}
 .post-header-detail {
 /*font-style:italic;*/
 text-align:center;
-padding-top:0px;10
+padding-top:0px;
 color:#345;
-font-size:1.4em;
-font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+font-size:1.8em;
+font-family: -apple-system,SF UI Display,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+font-weight: 700;
+margin:0;
 
 }
 
@@ -181,6 +187,8 @@ font-size:1em;
 padding-top:0px;
 }
 }
+
+
 
 
 .post-preview {
@@ -213,7 +221,10 @@ padding-top:0px;
 text-decoration: none;
   color: #880000;
 }
+.friend-link > a {
+font-size:16px;
 
+}
 
 /*index page abstract style*/
 .post-preview  .post-subtitle {
@@ -246,8 +257,8 @@ padding-bottom:0px;
 
 }
  .post-meta {
-  color: #000033;
-  font-size:19px;
+  color: #777;
+  font-size:15px;
   font-style: normal;
   font-weight:bold;
   margin-left:-10px;
