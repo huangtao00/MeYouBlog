@@ -1,5 +1,5 @@
 {% macro render_pagination(pagination) %}
-  <nav>
+  <div style="float:right">
     <ul class="pagination">
       {% if not pagination.has_prev %}
         <li class="page-item disabled">
@@ -49,5 +49,5 @@
         </li>
       {% endif %}      
     </ul>
-  </nav>
+  </div>
 {% endmacro %}

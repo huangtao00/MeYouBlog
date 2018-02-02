@@ -60,26 +60,13 @@
                 </p>
             {% endfor %}
             
-            <!-- show previos and next pagination -->
-            <ul class="pagination">
-                {% if posts.has_next %}
-                    <li class="page-item">
-                        <a  class="page-link alert alert-info"  href="?page={{ posts.next_num }}
-                            {%- if cur_category %}&category={{ cur_category }}{% endif %}
-                            {%- if cur_tag %}&tag={{ cur_tag }}{% endif %}"> Next &rarr;
-                        </a>
-                    </li>
-                {% endif %}
-                {% if posts.has_prev %}
-                    <li class="page-item">
-                        <a class="page-link alert alert-info"  href="?page={{ posts.prev_num}}
-                            {%- if cur_category %}&category={{ cur_category }}{% endif %}
-                            {%- if keywords %}&keywords={{ keywords }}{% endif %}
-                            {%- if cur_tag %}&tag={{ cur_tag }}{% endif %}">&larr;Previous
-                        </a>
-                    </li>
-                {% endif %}
-            </ul>
+        <div class="row">
+            <div class="col-lg-12  col-md-12  col-sm-12 "   style="margin-top:10px;">
+
+                {% import '_pagination.html' as pagination %}
+                {{ pagination.render_pagination(posts) }}
+            </div>
+        </div>            
             
  <!--know nothing about this -->
             {% for widget in widgets %}
