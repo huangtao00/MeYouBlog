@@ -174,7 +174,8 @@ class SuUser(MethodView):
 
     def post(self, username):
         form = forms.SuUserForm(obj=request.form)
-        if form.validate():
+        #if form.validate():
+        if request.method=="POST":
             user = models.User.objects.get_or_404(username=username)
 
             user.email = form.email.data
@@ -190,12 +191,12 @@ class SuUser(MethodView):
             user.social_networks['facebook']['url'] = form.facebook.data or None
             user.social_networks['linkedin']['url'] = form.linkedin.data or None
             user.save()
-
+          
             msg = 'Succeed to update user profile'
             flash(msg, 'success')
 
             return redirect(url_for('accounts.su_edit_user', username=user.username))
-
+        print "======================success"
         return self.get(form)
 
 class Profile(MethodView):

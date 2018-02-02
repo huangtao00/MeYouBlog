@@ -3,55 +3,58 @@
 {% block title %} Author | {{ user.display_name }} {% endblock %}
 {% block right_content %}
 {{ super() }}
-        
+        <div style="padding-top:40px;"> </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-12  col-md-12  col-sm-12">
-                    <div class="row">
-                        <h3>About {{ user.display_name }} </h3>
-                        
-                        <dl class="dl-horizontal">
-                            <dt>Username:</dt>
-                            <dd>{{ user.username }}</dd>
-                        </dl>
-                        <dl class="dl-horizontal">
-                            <dt>Biography:</dt>
-                            <dd>{{ user.biography }}</dd>
-                        </dl>
-                        <dl class="dl-horizontal">
-                            <dt>Social Network:</dt>
-                            <dd>
+                <div class="col-lg-2  col-md-3  col-sm-3" style="border-right-style:solid; border-width: 5px;border-color:#aaa;">
+                    <img src="{{ user.social_networks["weixin"]["url"] }}?imageView/2/w/150" title="weixin">
+                
+                </div>            
+            
+                <div class="col-lg-10 col-md-9  col-sm-9">
+                        <div> 
+                            <span style="padding-bottom:3px;font-size:22px;font-weight:bold;border-bottom-style:solid;border-color:#aaa;">
+                                关于【{{ user.display_name }}】...
+                            </span>                       
+                        </div>
+
+                        <table width="100%">
+                            <tr style="color:#500;font-weight:bold;border-bottom-style:solid;border-width:3px;border-color:#ccc;" > 
+                                <td>博主:</td>
+                                <td>箴言:</td>
+                                <td>社交:</td>
+                            </tr>
+                            <tr style="font-weight:normal;border-bottom-style:solid;border-width:3px;border-color:#ccc;"> 
+                                <td>{{ user.display_name }}</td>
+                                <td>{{ user.biography }}</td>
+                                <td>
                                 {% if user.social_networks['github']['url'] %}
                                     <a href='{{ user.social_networks["github"]["url"] }}'><i class="fa fa-github fa-lg"></i></a>
                                 {% endif %}
                       
                                 {% if user.social_networks['weixin']['url'] %}
                                     <a id="btn_weixin" href='{{ user.social_networks["weixin"]["url"] }}'><i class="fa fa-weixin fa-lg"></i></a>
-                                    <!-- weixin -->
-                                    <div id="weixin" class="hidden">
-                                        <br>
-                                        <img src="{{ user.social_networks["weixin"]["url"] }}?imageView/2/w/150" title="weixin">
-                                    </div> 
-                                {% endif %}                
-                            </dd>
-                        </dl>
-                        <dl class="dl-horizontal">
-                            <dt>Homepage:</dt>
-                            <dd>
-                                {% if user.homepage_url %}
-                                <a href="{{ user.homepage_url }}"><i class="fa fa-home fa-lg"></i></a> {{ user.homepage_url }}
-                                {% else %}
-                                Not yet
-                                {% endif %}
-                            </dd>
-                        </dl>
-                    </div>
+
+                                {% endif %}                                  
+                                </td>
+                            </tr>                        
+                        </table>
+                          
+                        <!--<dl class="dl-horizontal">-->
+                            <!--<dt>Homepage:</dt>-->
+                            <!--<dd>-->
+                                <!--{% if user.homepage_url %}-->
+                                <!--<a href="{{ user.homepage_url }}"><i class="fa fa-home fa-lg"></i></a> {{ user.homepage_url }}-->
+                                <!--{% else %}-->
+                                <!--Not yet-->
+                                <!--{% endif %}-->
+                            <!--</dd>-->
+                        <!--</dl>-->
+                
                     
                 </div>
             </div>
         </div>    
-       
- 
     <hr>
 
 {% endblock %}
