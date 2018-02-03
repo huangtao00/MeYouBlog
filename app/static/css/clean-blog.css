@@ -239,7 +239,7 @@ padding-bottom:0px;
 }
 /*index page tag and category string */
 .post-preview .post-meta {
-  color: #000077;
+  color: #777;
   font-size: 14px;
   font-style: normal;
   font-weight:bold;
@@ -276,6 +276,7 @@ padding-bottom:0px;
   color: #770000;
   margin-right:15px;
   margin-left:-8px;
+  
 }
 .post-preview  .post-meta  a:hover,
 .post-preview  .post-meta  a:focus {
@@ -288,6 +289,7 @@ font-size:16px;
 float:right;
 padding-top:5px;
 padding-right:10px;
+color:#888;
 /*margin-top: 20px;*/
 /*margin-bottom: 10px;*/
 
@@ -295,7 +297,7 @@ padding-right:10px;
 .post-preview   .post-author > a {
 text-decoration:none;
 font-weight:bold;
-color:#555599;
+color:#7777bb;
 }
 .post-preview  .post-author > a:hover,
 .post-preview   .post-author > a:focus{
