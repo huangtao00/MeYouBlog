@@ -42,7 +42,7 @@ class WidgetForm(FlaskForm):
 class CommentForm(FlaskForm):
     email = StringField('* 邮箱：', validators=[Required(), Length(1,128), Email()])
     author = StringField('* 昵称：', validators=[Required(), Length(1,128)])
-    homepage = StringField('个人主页(可选)：', validators=[URL(), Optional()])
+    homepage = StringField('个人主页(可选)：', validators=[URL(), Optional()],render_kw={"style":"margin-right:0px;"})
     content = TextAreaField('* 留言内容 <small><span class="label label-info">(支持MarkDown)</span></small>', validators=[Required()])
     comment_id = HiddenField('comment_id')
 

@@ -28,24 +28,15 @@
        
           <!--name email homepage input field-->
           {% if field.type == "StringField" %}
-                <div class="col-4  comment-info {% if field.errors %}has-error{% endif %} form-group"  >
+       
+                <div class="col-4  comment-info {% if field.errors %}has-error{% endif %} form-group"  style="padding-right:0px;" >
                  {{ field.label }}
                  {{ field(class_="form-control") }}
-                </div>                  
+                </div>   
+          
           {% endif %}
           
-          {% if field.errors or field.help_text %}
-            <div class="clearfix comment-info {% if field.errors %}has-error{% endif %} form-group" >
-            {{ field.label }}
-            <span class="help-block">
-            {% if field.errors %}
-              {{ field.errors|join(' ') }}
-            {% else %}
-              {{ field.help_text }}
-            {% endif %}
-            </span>
-            </div>
-          {% endif %}
+
    
   {% endif %}
 {% endfor %}
@@ -65,7 +56,7 @@
 <!--show comment input form-->
 {% if form.content %}
 <div class="row">
-                <div class="col-12 comment-info  form-group" >
+                <div class="col-12 comment-info  form-group"  style="padding-right:0px">
                  {{ form.content.label }}
                  {{ form.content(class_="form-control", rows=10) }}
                 </div>   
