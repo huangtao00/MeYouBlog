@@ -182,9 +182,34 @@ margin-bottom:10px;
 }
 
 
+
+@media only screen and (min-width: 1440px)
+{
+ .sidebar , .fixed-top {
+    padding-left: 50px;
+
+ }
+ .fixed-top {
+ padding-right:250px;
+ }
+ .right-content {
+  padding-right:130px;
+
+ }
+}
+@media only screen and (min-width: 2560px)
+{
+ 
+ 
+ 
+}
+
+
 @media only screen and (max-width: 768px){
 .comment-info {
+
  font-size:10px;
+ padding: 0px 5px 0px 5px;
 
 }
 }
