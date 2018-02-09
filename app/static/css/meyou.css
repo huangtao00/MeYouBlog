@@ -13,6 +13,34 @@ color:#000077;
 
 }        
 
+.course-menu {
+min-width:1em;
+padding:0px;
+border-radius:8px;
+
+}
+.course-item {
+padding:8px;
+border-radius:3px;
+background-color:#292b2c;
+
+}
+.course-item:focus {
+
+}
+.dropdown-item:focus, .dropdown-item:hover
+{
+    background-color: #555;
+}
+.course-item > a {
+color:#fff;
+font-weight:bold;
+}
+.course-item > a:hover {
+ text-decoration:none;
+}
+
+
 .post-author-title>span { 
 font-weight:bold;  
 font-size:16px;   
@@ -295,6 +323,8 @@ section {
     /*  cursor: url('../images/FB_CUR.cur');  See the result on http://lab.web-gate.fr/timeline/ */ 
     cursor: cell; /* This line is for the cursor */
 }
+
+
 
 .comment:hover:before { background: #3b5998 }
 
