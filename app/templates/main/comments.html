@@ -13,23 +13,22 @@
  {% for comment in comments %}
  <div class="row text-left" style="margin-top:10px;margin-bottom:10px;">
 
- <div class="col-lg-1 hidden-xs-down "> 
+ <div class="col-lg-1 offset-1 hidden-xs-down "> 
     <div style="padding-top:13px;">
        <img  width=50 src="{{ comment.get_gavatar_url() }}" alt="user-avatar">
     </div>
  </div>
  
- <div  class="col-lg-11 " style="background-color:#f6f9ff;border-radius:7px;border:2px #ddd solid;" >
+ <div  class="col-lg-9 " style="background-color:#f6f9ff;border-radius:7px;border:2px #ddd solid;" >
     <div class="row" style="background-color:#ddd;padding:0px 0px 0px 7px;">
-       <div  class="col-7"  style="padding:0px 0px 0px 4px;font-weight:bold;color:#777;">
+       <div  class="col-12"  style="padding:0px 0px 0px 4px;color:#444;font-weight:bold;color:#777;">
             <span>{{ comment.author }} 
                 {% if comment.homepage %}
                     <a href="{{ comment.homepage }}" rel="nofollow" target="_blank"><i class="fa fa-home" aria-hidden="true"></i></a>
-                {% endif %}
+                {% endif %} 
             </span>
-       </div>
-       <div  class="col-5 ">
-            <span style="font-size:15px;margin-top:5px;float:right;background-color:none;margin-right:0px;color:#777;">{{ comment.pub_time.strftime('%Y-%m-%d') }}</span>
+       
+            <span style="font-size:15px;margin-top:5px;background-color:none;margin-right:0px;color:#777;">commented on {{ comment.pub_time.strftime('%Y-%m-%d') }}</span>
        </div>
 
    </div>
