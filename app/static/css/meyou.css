@@ -76,14 +76,17 @@ font-size:18px;
 
 /*height:350px;*/
 
-box-shadow: 3px 7px #777;
 border-color:#9ab;
-border-radius:0px 0px 10px 10px;
 border-width:2px;
-background-color:#FAFDFF;
-padding: 10px 10px 20px 10px;
+
+padding: 10px 15px 20px 15px;
 margin-top:4px;
 border-style:none none solid none;
+
+
+background: #fff;
+border-radius: 0 0 4px 4px;
+box-shadow: 0 10px 20px   rgba(0,0,0,0.6);;
 
 }
 .post-content > p {
