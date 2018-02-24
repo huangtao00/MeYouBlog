@@ -233,7 +233,7 @@ margin-bottom:10px;
 @media only screen and (max-width: 1200px){
     .right-content {
         padding-right:10px;
-        margin-right: 5px;
+        margin-right: 0px;
        }
 
 }
