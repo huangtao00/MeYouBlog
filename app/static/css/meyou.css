@@ -228,6 +228,23 @@ margin-bottom:10px;
 
  }
 }
+
+@media only screen and (min-width: 1920px)
+{
+.sidebar, .fixed-top {
+    padding-left: 200px; 
+}
+.sidebar{
+    max-width: 550px;
+    min-width: 300px;
+
+}
+
+.right-content {
+    padding-right:500px;
+  
+   }
+}
 @media only screen and (min-width: 2560px)
 {
  
