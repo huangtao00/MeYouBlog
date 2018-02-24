@@ -210,6 +210,7 @@ margin-bottom:10px;
   .about-lastline {
    margin-bottom:10px;
   }
+
 }
 
 
@@ -224,9 +225,17 @@ margin-bottom:10px;
  padding-right:130px;
  }
  .right-content {
-  padding-right:10px;
+  padding-right:100px;
 
  }
+}
+
+@media only screen and (max-width: 1200px){
+    .right-content {
+        padding-right:0px;
+        margin-right: 20px;
+       }
+
 }
 
 @media only screen and (min-width: 1920px)
@@ -241,16 +250,12 @@ margin-bottom:10px;
 }
 
 .right-content {
-    padding-right:500px;
+    padding-right:600px;
+    margin-left: 560px;
   
    }
 }
-@media only screen and (min-width: 2560px)
-{
- 
- 
- 
-}
+
 
 
 @media only screen and (max-width: 768px){
