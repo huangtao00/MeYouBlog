@@ -50,3 +50,41 @@ margin-bottom:0px;
  color:blue;
  text-decoration:none;
 }
+
+/* addd line number for code block */
+pre {
+    position: relative;
+    margin-bottom: 24px;
+    border-radius: 3px;
+    /* border: 1px solid #C3CCD0; */
+    background: #FFF;
+    overflow: hidden;
+  }
+  code {
+   display: block;
+   padding: 12px 24px;
+   overflow-y: auto;
+   font-weight: 300;
+   font-family: Menlo, monospace;
+   font-size: 0.8em;
+  }
+  code.has-numbering {
+    margin-left: 22px;
+  }
+  .pre-numbering {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    padding: 12px 2px 12px 0;
+    border-right: 2px solid rgb(250, 196, 200);
+    border-radius: 5px 0px 0px 5px;
+    background-color: rgb(122, 122, 122);
+    text-align: right;
+    font-family: Menlo, monospace;
+    font-size: 0.8em;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding-right:5px;
+    padding-left: 3px;
+  }
