@@ -102,6 +102,12 @@ def get_index_page_data():
     return data
 def list_posts():
     data=get_index_page_data()
+    #get all friend links
+    friendlinkmodel=models.FriendLink
+    friends=friendlinkmodel.objects()
+    # print friends
+    friends = [friend.to_dict() for friend in friends]    
+    data["friends"]=friends
     return render_template('main/index.html', **data)
 
 def list_wechats():

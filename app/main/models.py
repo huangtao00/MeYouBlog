@@ -31,6 +31,16 @@ POST_TYPE_CHOICES = ('post', 'page', 'wechat')
 GAVATAR_CDN_BASE = OctBlogSettings['gavatar_cdn_base']
 GAVATAR_DEFAULT_IMAGE = OctBlogSettings['gavatar_default_image']
 
+class FriendLink(db.Document):
+    blog_name = db.StringField(max_length=255, required=True, unique=True)
+    blog_url= db.StringField(max_length=255, required=True, unique=True)
+    def __repr__(self):
+        return "[%s---%s]" %(self.blog_name,self.blog_url)
+    def to_dict(self):
+        friends={"blog_name":self.blog_name,"blog_url":self.blog_url}
+        return friends
+        
+
 class Post(db.Document):
     title = db.StringField(max_length=255, default='new blog', required=True)
     slug = db.StringField(max_length=255, required=True, unique=True)

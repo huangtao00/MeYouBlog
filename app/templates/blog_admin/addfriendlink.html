@@ -1,0 +1,62 @@
+{% extends 'admin_base.html' %}
+
+{%block main %}
+<div class="col-md-8 col-md-offset-2">
+    <div class="row">
+            <h3 align="center" style="color:rgba(58, 58, 66, 0.829)">友情链接管理</h3>
+            {% if friends %}
+            <table class="table">
+                <thead class="label-primary" style="color:aliceblue">
+                    <tr>
+                            <th >博客名称</th>
+                            <th >博客链接</th>
+                            <th>操作</th>
+                    </tr>
+                </thead>
+                {% for friend in friends %}
+                <tr>
+                    <td>    {{ friend.blog_name}}</td>
+                    <td>    {{ friend.blog_url}}</td>   
+                    <td> <a href="{{ url_for('blog_admin.su_friendlink', blog_name=friend.blog_name ) }}">Delete</a></td>
+                </tr>
+    
+                {% endfor %}
+    
+            </table>
+    
+        {% endif %}
+    </div>
+
+
+
+    <div class="row">
+            <form action="{{url_for('blog_admin.su_friendlink')}}" method="post">
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">博客名称</label>
+                      <input type="text" class="form-control" name="friend_blog_name" id="friend_blog_name" placeholder="MeYou`s Blog">
+                    </div>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput2">博客链接</label>
+                      <input type="text" class="form-control" name="friend_blog_url" id="friend_blog_url" placeholder="http://www.meyoublog.com">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+
+            </form>
+    </div>
+ 
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+    $('#btn_weixin').on('click', function(event){
+        if($('#weixin').hasClass('hidden'))
+            $('#weixin').removeClass('hidden');
+        else
+            $('#weixin').addClass('hidden');
+        return false
+    })
+    
+    
+</script>
+{% endblock %}

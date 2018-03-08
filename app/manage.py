@@ -11,7 +11,6 @@ app = create_app(os.getenv('config') or 'default')
 
 # from OctBlog import app
 
-
 manager = Manager(app)
 
 # Turn on debugger by default and reloader
@@ -21,6 +20,7 @@ manager.add_command("runserver", Server(
     host = '0.0.0.0',
     port = 5000)
 )
+
 @manager.command
 def live():
     print ("in live function")

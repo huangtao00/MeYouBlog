@@ -48,6 +48,48 @@ class AdminIndex(MethodView):
         blog_meta = OctBlogSettings['blog_meta']
         user = get_current_user()
         return render_template(self.template_name, blog_meta=blog_meta, user=user)
+class addFriendLink(MethodView):
+    decorators = [login_required]
+    template_name = 'blog_admin/addfriendlink.html'
+
+    def get(self,post_type='get'):
+        # print "get request"
+        # blog_meta = OctBlogSettings['blog_meta']
+        # user = get_current_user()
+        # return render_template(self.template_name, user=user)
+        blog_name=request.args.get("blog_name")
+        friendlinkmodel=models.FriendLink
+        if blog_name: #delte a user from table
+            #delete a user
+            friendlinkmodel.objects(blog_name=blog_name).delete()
+            flash("删除一条友情链接成功！")
+            # friendlinkmodel.drop_collection()
+        # query all friend links from database
+        friends=friendlinkmodel.objects()
+        # print friends
+        friends = [friend.to_dict() for friend in friends]
+        # print friends
+        return render_template(self.template_name, friends=friends)
+        
+    def post(self,post_type='post'):
+        """
+        save friend link
+        """
+        #add link to database
+        # print("post request") 
+        blog_name=request.form["friend_blog_name"]
+        blog_url=request.form["friend_blog_url"]
+        if blog_name and blog_url:    
+            friendlinkmodel=models.FriendLink
+            afriendlink=friendlinkmodel()
+            afriendlink.blog_name=blog_name
+            afriendlink.blog_url=blog_url
+            afriendlink.save()
+            flash("友情链接保存成功")
+        # print blog_name, blog_url
+        else:
+            flash("请完善提交的内容")
+        return redirect(url_for('blog_admin.su_friendlink'))
 
 class PostsList(MethodView):
     decorators = [login_required]

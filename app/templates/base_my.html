@@ -191,11 +191,15 @@
                       <span href="#" class="list-group-item active" style="font-weight:bold;padding:5px;padding-left:8px;">
                         友情链接:
                       </span>
-                      <a href="https://blog.igevin.info/" class="list-group-item list-group-item-action">Gevin`s Blog</a>
-                     <a href="http://blog.oyohyee.com" class="list-group-item list-group-item-action">OhYee`s Blog</a>
+                      {% if friends %}
+                        {% for friend in friends %}                
+                            <a href="{{ friend.blog_url}}" class="list-group-item list-group-item-action">{{ friend.blog_name}}</a>
+            
+                        {% endfor %}
+                      {% endif %}
+             
 
                       <a href="/pages/About/" class="list-group-item list-group-item-action">欢迎留链互粉</a>
-                      <a href="#" class="list-group-item list-group-item-action">etc</a>
                     </div>                    
                   
                     <!--segment link show-->
