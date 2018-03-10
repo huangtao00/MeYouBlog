@@ -86,3 +86,8 @@ pre {
     padding-right:5px;
     padding-left: 3px;
   }
+
+  .post-content > blockquote >p
+  {
+    margin-bottom: 0px;
+  }
