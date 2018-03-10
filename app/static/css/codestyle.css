@@ -96,6 +96,7 @@ pre {
     margin-right: 15px;
     margin-left: 15px;
     background: #9c9c9c;
+    color: #444;
   }
   .post-content > blockquote >p
   {
@@ -104,7 +105,7 @@ pre {
   }
   .post-content > blockquote >p> code 
   {
-   color:blue;
+   color:#4444d0;
    font-weight: bold;
    background: #9c9c9c;
   }
