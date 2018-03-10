@@ -87,7 +87,21 @@ pre {
     padding-left: 3px;
   }
 
+  .post-content > blockquote {
+
+    border: 10px solid #9a0705;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
   .post-content > blockquote >p
   {
     margin-bottom: 0px;
+    margin-left: 0px;
+  }
+  .post-content > blockquote >p> code 
+  {
+   color:blue;
   }
