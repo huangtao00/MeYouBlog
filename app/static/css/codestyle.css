@@ -109,3 +109,31 @@ pre {
    font-weight: bold;
    background: #9c9c9c;
   }
+
+  .post-content > ol {
+    margin-left: 15px;
+    padding: 0;
+    list-style-type: none;
+
+
+  }
+
+  .post-content >ol > li {
+    counter-increment: step-counter;
+    /* margin-bottom: 5px; */
+    color:#545454; 
+    background-color: rgb(248, 248, 248);
+    /* background: #eef; */
+
+  }
+
+  .post-content >ol > li::before {
+    content: counter(step-counter);
+    margin-right: 5px;
+    font-size: 60%;
+    background-color: rgb(115, 136, 136);
+    color: white;
+    font-weight: bold;
+    padding: 3px 5px;
+    border-radius: 3px;
+  }

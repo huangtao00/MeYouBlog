@@ -28,7 +28,7 @@ def live():
     server = Server(app.wsgi_app)
     server.watch("static/css/*.*")
     server.watch("templates/*/*.*")
-    server.serve(open_url_delay=True)
+    server.serve(open_url_delay=True,port=8080)
 
 @manager.command
 def test():
