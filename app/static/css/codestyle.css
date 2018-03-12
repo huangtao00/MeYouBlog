@@ -94,9 +94,10 @@ pre {
     border-right: none;
     border-bottom: none;
     margin-right: 15px;
-    margin-left: 15px;
-    background: #9c9c9c;
-    color: #444;
+    margin-left: 40px;
+    padding-left: 10px;
+    background: #d4d4d4;
+    color: #444;s
   }
   .post-content > blockquote >p
   {
