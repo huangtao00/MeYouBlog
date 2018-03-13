@@ -88,7 +88,7 @@ pre {
   }
 
   .post-content > blockquote {
-
+    max-width: fit-content;
     border: 10px solid #9a0705;
     border-top: none;
     border-right: none;
