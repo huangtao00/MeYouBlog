@@ -133,7 +133,7 @@ pre {
     content: counter(step-counter);
     margin-right: 5px;
     font-size: 60%;
-    background-color: rgb(115, 136, 136);
+    background-color:#9a0705;
     color: white;
     font-weight: bold;
     padding: 3px 5px;
