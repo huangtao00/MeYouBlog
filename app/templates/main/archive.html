@@ -10,38 +10,55 @@
 {% endblock %}
 
 {% block right_content %}
-        <div style="padding-top:20px;"> </div>
+<div style="padding-top:20px;"> </div>
+    <div class="row" >
+        <div class="col-lg-8  col-md-8  col-sm-8 " >
+            <div class="timeline">
+                <div class="timeline__group">
+                    <span class="timeline__year" style="background: #0e9986;">By Timeline</span>
+                    {% for post in posts.items %}
+                    <div class="timeline__box">
+                        <div class="timeline__date" title='{{post.pub_time.year}}'>
+                      
+                            <span class="timeline__day">{{ moment(post.pub_time).format('DD日') }}</span>
+                            <span class="timeline__month">{{ moment(post.pub_time).format('MM月') }}</span>
+                        </div>
+                        <div class="timeline__post">
+                        <div class="timeline__content">
+                                <div class="archive-title" > 
+                                        <a href="{{ url_for('main.post_detail',slug=post.slug) }}"><i class="fa fa-file-word-o" aria-hidden="true"></i> {{ post.title| title }}</a>
+                                </div> 
+                                <div class="archive-catetag" >
+                                    <a href="?category={{ post.category }}"><span class="badge  badge-primary">{{ post.category }}</span>&nbsp;</a>
+                                    {% for tag in post.tags %} 
+                                    <a href="{{ url_for('main.index') }}?tag={{ tag }}"> 
+                                    <span class="  badge badge-warning">
+                                    {{ tag }}</span>  
+                                    </a>  
+                                    {% endfor %}  
 
-        {% for post in posts.items %}
-            <div class="row" >
-                    <div class="col-lg-12  col-md-12  col-sm-12 post-nav" >
-                  <!-- <img src="..." alt="..."> -->
-                    <div class="archive-title" >
-                        <a href="{{ url_for('main.post_detail', slug=post.slug) }}"><i class="fa fa-file-word-o" aria-hidden="true"></i> {{ post.title| title }}</a>
+                                </div>
+                                <div style="clear:both">
+                                        <!-- {{ moment(post.pub_time).format('YYYY') }} -->
+                                </div>
+                        </div>
+                        </div>
                     </div>
-                    <div class="archive-catetag" >
-                        <a href="?category={{ post.category }}"><span class="badge  badge-primary">{{ post.category }}</span>&nbsp;</a>
-                        {% for tag in post.tags %} 
-                        <a href="{{ url_for('main.index') }}?tag={{ tag }}"> 
-                        <span class="  badge badge-warning">
-                        {{ tag }}</span>  
-                        </a>  
-                        {% endfor %}  
-                    </div> 
-                                  
-                    <div class="archive-meta" >
-                       <i class="fa fa-clock-o fa-1g" aria-hidden="true"> </i> {{ moment(post.pub_time).format('YYYY年MM月DD日') }}<!--'YYYY/MM/DD-h:mm a' -->
-                    </div>
-                    
-                </div>       
-            </div> <!--end of row-->
-            <hr style="height:2px;border-top:2px dashed #aaa;margin:-1px -20px 0px -10px;" />    
-        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div> 
+    </div> <!--end of row-->
+
+
+
+
+
        
 
         <div class="row">
-            <div class="col-lg-12  col-md-12  col-sm-12 "   style="padding-right:0px;margin-top:10px;">
-
+            <div class="col-lg-8  col-md-8  col-sm-8 ">
+              <hr style="height:2px;border-top:2px dashed rgb(197, 196, 196);margin:-1px 0px 0px -10px;" />    
                 {% import '_pagination.html' as pagination %}
                 {{ pagination.render_pagination(posts) }}
             </div>

@@ -103,7 +103,7 @@ box-shadow: 0 10px 20px   rgba(0,0,0,0.6);;
    /*top: 50%;*/
 }
 .post-content > h1, h2, h3, h4 {
-color:#222;
+color:#444444;
 /*font-weight:normal;*/
 }
 
@@ -365,6 +365,252 @@ section {
     -o-transform: rotate(45deg);
 }
 
+
+/* for time line */
+.timeline{
+    --uiTimelineMainColor:  #636c72;
+  
+    --uiTimelineSecondaryColor: var(--timelineSecondaryColor, #fff);
+  
+    position: relative;
+    /* padding-top: 3rem; */
+    padding-bottom: 3rem;
+  }
+  
+  .timeline:before{
+    content: "";
+    width: 4px;
+    height: 100%;
+    background-color: var(--uiTimelineMainColor);
+  
+    position: absolute;
+    top: 0;
+  }
+  
+  .timeline__group{
+    position: relative;
+  }
+  
+  .timeline__group:not(:first-of-type){
+    margin-top: 4rem;
+  }
+  
+  .timeline__year{
+    padding: .5rem 1.5rem;
+    color: var(--uiTimelineSecondaryColor);
+    background-color: var(--uiTimelineMainColor);
+  
+    position: absolute;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+
+    left: 0;
+    top: 0;
+  }
+  
+  .timeline__box{
+    position: relative;
+
+   
+  }
+  
+  .timeline__box:not(:last-of-type){
+    margin-bottom: 40px;
+  }
+  
+  .timeline__box:before{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--uiTimelineMainColor);
+  
+    position: absolute;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .timeline__date{
+
+    min-width: 65px;
+    position: absolute;
+    left: 0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: .5rem 1.5rem;
+    text-align: center;
+      box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+
+    background-color: var(--uiTimelineMainColor);
+    color: var(--uiTimelineSecondaryColor);
+  }
+  
+  .timeline__day{
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+  }
+  
+  .timeline__month{
+    display: block;
+    font-size: .8em;
+    text-transform: uppercase;
+  }
+  
+  .timeline__post{
+    padding: 10px 5px;
+    border-radius: 2px;
+    border-left: 3px solid var(--uiTimelineMainColor);
+    /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24); */
+    box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+    background-color: var(--uiTimelineSecondaryColor);
+    /* max-width: 600px; */
+  }
+  
+  @media screen and (min-width: 641px){
+  
+    .timeline:before{
+      left: 30px;
+    }
+  
+    .timeline__group{
+      padding-top: 55px;
+    }
+  
+    .timeline__box{
+        padding-left: 90px;
+    }
+  
+    .timeline__box:before{
+      top: 50%;
+      transform: translateY(-50%);  
+    }  
+  
+    .timeline__date{
+      top: 50%;
+      margin-top: -27px;
+    }
+  }
+  
+  @media screen and (max-width: 640px){
+  
+    .timeline:before{
+      left: 0;
+    }
+  
+    .timeline__group{
+      padding-top: 40px;
+    }
+  
+    .timeline__box{
+      padding-left: 20px;
+      padding-top: 70px;
+    }
+  
+    .timeline__box:before{
+      top: 90px;
+    }    
+  
+    .timeline__date{
+      top: 0;
+    }
+  }
+  
+  .timeline{
+    --timelineMainColor: #4557bb;
+    font-size: 16px;
+  }
+  
+  @media screen and (min-width: 768px){
+  
+    html{
+      font-size: 62.5%;
+    }
+  }
+  
+  @media screen and (max-width: 767px){
+  
+    html{
+      font-size: 55%;
+    }
+  }
+  
+  /*
+  * demo page
+  */
+  
+  @media screen and (min-width: 768px){
+  
+    html{
+      font-size: 62.5%;
+    }
+  }
+  
+  @media screen and (max-width: 767px){
+  
+  
+  
+  
+  p{
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  p:last-child{
+    margin-bottom: 0;
+  }
+  
+  .page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .page__demo{
+    flex-grow: 1;
+  }
+  
+  .main-container{
+    max-width: 960px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .page__container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    max-width: 800px;
+  }
+  
+  .footer{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;  
+    font-size: 1.4rem;
+  }
+  
+  .footer__link{
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  @media screen and (min-width: 361px){
+  
+    .footer__container{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  
+  @media screen and (max-width: 360px){
+  
+    .melnik909{
+      display: none;
+    } 
+  }
 
 
 
