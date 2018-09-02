@@ -1,0 +1,3036 @@
+[2018-02-01 10:46:59 +0000] [7732] [INFO] Starting gunicorn 19.7.1
+[2018-02-01 10:46:59 +0000] [7732] [INFO] Listening at: http://127.0.0.1:80 (7732)
+[2018-02-01 10:46:59 +0000] [7732] [INFO] Using worker: sync
+[2018-02-01 10:46:59 +0000] [7737] [INFO] Booting worker with pid: 7737
+[2018-02-01 10:47:17 +0000] [7732] [INFO] Handling signal: term
+[2018-02-01 10:47:17 +0000] [7737] [INFO] Worker exiting (pid: 7737)
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+[2018-02-01 10:47:17 +0000] [7732] [INFO] Shutting down: Master
+[2018-02-01 10:56:10 +0000] [7851] [INFO] Starting gunicorn 19.7.1
+[2018-02-01 10:56:10 +0000] [7851] [INFO] Listening at: http://127.0.0.1:1080 (7851)
+[2018-02-01 10:56:10 +0000] [7851] [INFO] Using worker: sync
+[2018-02-01 10:56:10 +0000] [7856] [INFO] Booting worker with pid: 7856
+[2018-02-02 13:46:27 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    return self.get(form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2c78650>
+[2018-02-02 13:46:34 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    return self.get(form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2c9ea90>
+[2018-02-02 13:46:44 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    return self.get(form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2b2b250>
+[2018-02-02 13:46:55 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    return self.get(form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2c9e990>
+[2018-02-02 13:47:10 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    return self.get(form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2e75d50>
+[2018-02-02 13:47:20 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    return self.get(form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2c9ed10>
+[2018-02-02 13:47:32 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    return self.get(form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2e75c10>
+[2018-02-02 15:52:48 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    print "======================success"
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2c78c50>
+[2018-02-02 15:54:36 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    print "======================success"
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2e81050>
+[2018-02-02 15:55:45 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    print "======================success"
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2e81950>
+[2018-02-02 15:56:16 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    print "======================success"
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2e81690>
+[2018-02-02 15:56:42 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    print "======================success"
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2c78d50>
+[2018-02-02 15:58:06 +0000] [7856] [ERROR] Error handling request /accounts/su-users/edit/meyou
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/usr/lib64/python2.7/site-packages/flask_principal.py", line 199, in _decorated
+    rv = f(*args, **kw)
+  File "/usr/lib64/python2.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 84, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/flask/views.py", line 149, in dispatch_request
+    return meth(*args, **kwargs)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 199, in post
+    print "======================success"
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 172, in get
+    data = self.get_context(username, form)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 159, in get_context
+    user = models.User.objects.get_or_404(username=username)
+  File "/usr/lib/python2.7/site-packages/flask_mongoengine/__init__.py", line 159, in get_or_404
+    return self.get(*args, **kwargs)
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 272, in get
+    result = queryset.next()
+  File "/usr/lib/python2.7/site-packages/mongoengine/queryset/base.py", line 1466, in next
+    raw_doc = self._cursor.next()
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1176, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 1087, in _refresh
+    self.__send_message(q)
+  File "/usr/lib64/python2.7/site-packages/pymongo/cursor.py", line 924, in __send_message
+    **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1026, in _send_message_with_response
+    exhaust)
+  File "/usr/lib64/python2.7/site-packages/pymongo/mongo_client.py", line 1037, in _reset_on_error
+    return func(*args, **kwargs)
+  File "/usr/lib64/python2.7/site-packages/pymongo/server.py", line 94, in send_message_with_response
+    set_slave_okay, sock_info, use_find_cmd)
+  File "/usr/lib64/python2.7/site-packages/pymongo/message.py", line 323, in get_message
+    spec, self.fields, self.codec_options)
+InvalidDocument: Cannot encode object: <accounts.forms.SuUserForm object at 0x2c9e590>
+[2018-02-02 15:58:33 +0000] [7851] [INFO] Handling signal: term
+[2018-02-02 15:58:33 +0000] [7856] [INFO] Worker exiting (pid: 7856)
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+[2018-02-02 15:58:33 +0000] [7851] [INFO] Shutting down: Master
+[2018-02-02 16:02:40 +0000] [12415] [INFO] Starting gunicorn 19.7.1
+[2018-02-02 16:02:40 +0000] [12415] [INFO] Listening at: http://127.0.0.1:1080 (12415)
+[2018-02-02 16:02:40 +0000] [12415] [INFO] Using worker: sync
+[2018-02-02 16:02:40 +0000] [12420] [INFO] Booting worker with pid: 12420
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+new post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+new post post
+new post post
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+validate
+post
+edit post post
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+new post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+new post post
+new post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+new post post
+you want upload an image here
+new post post
+new post post
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+new post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+new post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+[2018-03-08 12:32:25 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:32:30 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:32:37 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:32:43 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:33:16 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:33:26 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:33:33 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:33:54 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:34:30 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:35:22 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:35:24 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:36:56 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:37:01 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:40:27 +0000] [12420] [ERROR] Error handling request /accounts/login/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 135, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 176, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1997, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1985, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1540, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/MeYouBlog-master/app/accounts/views.py", line 33, in login
+    return render_template('accounts/login.html', form=form)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/usr/lib64/python2.7/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/usr/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/root/MeYouBlog-master/app/templates/accounts/login.html", line 1, in top-level template code
+    {% extends "admin_base.html" %}
+  File "/root/MeYouBlog-master/app/templates/admin_base.html", line 151, in top-level template code
+    <a href="{{ url_for('blog_admin.su_friendlink') }}">
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/usr/lib64/python2.7/site-packages/flask/app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib64/python2.7/site-packages/flask/helpers.py", line 323, in url_for
+    force_external=external)
+  File "/usr/lib/python2.7/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+BuildError: Could not build url for endpoint 'blog_admin.su_friendlink'. Did you mean 'blog_admin.su_widget' instead?
+[2018-03-08 12:43:13 +0000] [12415] [INFO] Handling signal: term
+[2018-03-08 12:43:13 +0000] [12420] [INFO] Worker exiting (pid: 12420)
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+new post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+new post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+[2018-03-08 12:43:13 +0000] [12415] [INFO] Shutting down: Master
+[2018-03-08 12:45:13 +0000] [12759] [INFO] Starting gunicorn 19.7.1
+[2018-03-08 12:45:13 +0000] [12759] [INFO] Listening at: http://127.0.0.1:1080 (12759)
+[2018-03-08 12:45:13 +0000] [12759] [INFO] Using worker: sync
+[2018-03-08 12:45:13 +0000] [12764] [INFO] Booting worker with pid: 12764
+[2018-03-08 12:45:13 +0000] [12764] [ERROR] invalid syntax (<string>, line 1)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python2.7/site-packages/gunicorn/util.py", line 364, in import_app
+    app = eval(obj, vars(mod))
+  File "<string>", line 1
+    app　
+       ^
+SyntaxError: invalid syntax
+[2018-03-08 12:45:13 +0000] [12764] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2018-03-08 12:45:13 +0000] [12764] [INFO] Worker exiting (pid: 12764)
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+[2018-03-08 12:45:14 +0000] [12759] [INFO] Shutting down: Master
+[2018-03-08 12:45:14 +0000] [12759] [INFO] Reason: Worker failed to boot.
+[2018-03-08 12:45:44 +0000] [12774] [INFO] Starting gunicorn 19.7.1
+[2018-03-08 12:45:44 +0000] [12774] [INFO] Listening at: http://127.0.0.1:1080 (12774)
+[2018-03-08 12:45:44 +0000] [12774] [INFO] Using worker: sync
+[2018-03-08 12:45:44 +0000] [12779] [INFO] Booting worker with pid: 12779
+[2018-03-08 12:45:44 +0000] [12779] [ERROR] invalid syntax (<string>, line 1)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python2.7/site-packages/gunicorn/util.py", line 364, in import_app
+    app = eval(obj, vars(mod))
+  File "<string>", line 1
+    app　
+       ^
+SyntaxError: invalid syntax
+[2018-03-08 12:45:44 +0000] [12779] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2018-03-08 12:45:44 +0000] [12779] [INFO] Worker exiting (pid: 12779)
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+[2018-03-08 12:45:45 +0000] [12774] [INFO] Shutting down: Master
+[2018-03-08 12:45:45 +0000] [12774] [INFO] Reason: Worker failed to boot.
+[2018-03-08 12:46:36 +0000] [12787] [INFO] Starting gunicorn 19.7.1
+[2018-03-08 12:46:36 +0000] [12787] [INFO] Listening at: http://127.0.0.1:1080 (12787)
+[2018-03-08 12:46:36 +0000] [12787] [INFO] Using worker: sync
+[2018-03-08 12:46:36 +0000] [12792] [INFO] Booting worker with pid: 12792
+[2018-03-08 12:46:36 +0000] [12792] [ERROR] invalid syntax (<string>, line 1)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python2.7/site-packages/gunicorn/util.py", line 364, in import_app
+    app = eval(obj, vars(mod))
+  File "<string>", line 1
+    app　
+       ^
+SyntaxError: invalid syntax
+[2018-03-08 12:46:36 +0000] [12792] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2018-03-08 12:46:36 +0000] [12792] [INFO] Worker exiting (pid: 12792)
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+[2018-03-08 12:46:37 +0000] [12787] [INFO] Shutting down: Master
+[2018-03-08 12:46:37 +0000] [12787] [INFO] Reason: Worker failed to boot.
+[2018-03-08 12:47:22 +0000] [12803] [INFO] Starting gunicorn 19.7.1
+[2018-03-08 12:47:22 +0000] [12803] [INFO] Listening at: http://127.0.0.1:1080 (12803)
+[2018-03-08 12:47:22 +0000] [12803] [INFO] Using worker: sync
+[2018-03-08 12:47:22 +0000] [12808] [INFO] Booting worker with pid: 12808
+[2018-03-08 12:47:22 +0000] [12808] [ERROR] invalid syntax (<string>, line 1)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python2.7/site-packages/gunicorn/util.py", line 364, in import_app
+    app = eval(obj, vars(mod))
+  File "<string>", line 1
+    app　
+       ^
+SyntaxError: invalid syntax
+[2018-03-08 12:47:22 +0000] [12808] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2018-03-08 12:47:22 +0000] [12808] [INFO] Worker exiting (pid: 12808)
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+[2018-03-08 12:47:23 +0000] [12803] [INFO] Shutting down: Master
+[2018-03-08 12:47:23 +0000] [12803] [INFO] Reason: Worker failed to boot.
+[2018-03-08 13:08:01 +0000] [1037] [INFO] Starting gunicorn 19.7.1
+[2018-03-08 13:08:01 +0000] [1037] [INFO] Listening at: http://127.0.0.1:1080 (1037)
+[2018-03-08 13:08:01 +0000] [1037] [INFO] Using worker: sync
+[2018-03-08 13:08:01 +0000] [1042] [INFO] Booting worker with pid: 1042
+[2018-03-08 13:08:02 +0000] [1042] [ERROR] invalid syntax (<string>, line 1)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python2.7/site-packages/gunicorn/util.py", line 364, in import_app
+    app = eval(obj, vars(mod))
+  File "<string>", line 1
+    app　
+       ^
+SyntaxError: invalid syntax
+[2018-03-08 13:08:02 +0000] [1042] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2018-03-08 13:08:02 +0000] [1042] [INFO] Worker exiting (pid: 1042)
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+[2018-03-08 13:08:02 +0000] [1037] [INFO] Shutting down: Master
+[2018-03-08 13:08:02 +0000] [1037] [INFO] Reason: Worker failed to boot.
+[2018-03-09 01:32:04 +0000] [3292] [INFO] Starting gunicorn 19.7.1
+[2018-03-09 01:32:04 +0000] [3292] [INFO] Listening at: http://127.0.0.1:1080 (3292)
+[2018-03-09 01:32:04 +0000] [3292] [INFO] Using worker: sync
+[2018-03-09 01:32:04 +0000] [3297] [INFO] Booting worker with pid: 3297
+[2018-03-11 05:37:58 +0000] [17739] [INFO] Starting gunicorn 19.7.1
+[2018-03-11 05:37:58 +0000] [17739] [INFO] Listening at: http://127.0.0.1:1080 (17739)
+[2018-03-11 05:37:58 +0000] [17739] [INFO] Using worker: sync
+[2018-03-11 05:37:58 +0000] [17744] [INFO] Booting worker with pid: 17744
+/root/MeYouBlog-master/app/OctBlog/config.py
+/root/MeYouBlog-master/app
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+edit post post
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+new post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+new post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+new post post
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+new post post
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+edit post post
+you want upload an image here/root/MeYouBlog-master/app/OctBlog/config.py
+/root/MeYouBlog-master/app
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+new post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+edit post post
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+new post post
+you want upload an image here
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+you want upload an image here
+new post post
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+you want upload an image here
+Not ready to submit urls yet
+new post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+new post post
+you want upload an image here
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+you want upload an image here
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+you want upload an image here
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+edit post post
+edit post post
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+new post post
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+new post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+new post post
+you want upload an image here
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+edit post post
+new post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not [2018-04-12 17:08:22 +0000] [17739] [CRITICAL] WORKER TIMEOUT (pid:17744)
+[2018-04-12 17:08:22 +0000] [17744] [INFO] Worker exiting (pid: 17744)
+9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+you want upload an image here
+edit post post
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+new post post
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+new post post
+Not ready to submit urls yet
+you want upload an image here
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+you want upload an image here
+Not ready to submit urls yet
+Not ready to submit urls yet
+you want upload an image here
+edit post post
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+[2018-04-12 17:08:22 +0000] [21748] [INFO] Booting worker with pid: 21748
+/usr/lib/python2.7/site-packages/requests/__init__.py:80: RequestsDependencyWarning: urllib3 (1.22) or chardet (2.2.1) doesn't match a supported version!
+  RequestsDependencyWarning)
+[2018-04-12 17:08:56 +0000] [17739] [CRITICAL] WORKER TIMEOUT (pid:21748)
+[2018-04-12 17:08:56 +0000] [21748] [INFO] Worker exiting (pid: 21748)
+/root/MeYouBlog-master/app/OctBlog/config.py
+/root/MeYouBlog-master/app
+[2018-04-12 17:08:57 +0000] [21757] [INFO] Booting worker with pid: 21757
+/usr/lib/python2.7/site-packages/requests/__init__.py:80: RequestsDependencyWarning: urllib3 (1.22) or chardet (2.2.1) doesn't match a supported version!
+  RequestsDependencyWarning)
+[2018-04-13 00:11:09 +0000] [17739] [CRITICAL] WORKER TIMEOUT (pid:21757)
+[2018-04-13 00:11:09 +0000] [21757] [INFO] Worker exiting (pid: 21757)
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+[2018-04-13 00:11:09 +0000] [22256] [INFO] Booting worker with pid: 22256
+/usr/lib/python2.7/site-packages/requests/__init__.py:80: RequestsDependencyWarning: urllib3 (1.22) or chardet (2.2.1) doesn't match a supported version!
+  RequestsDependencyWarning)
+[2018-04-13 00:57:11 +0000] [3292] [CRITICAL] WORKER TIMEOUT (pid:3297)
+[2018-04-13 00:57:11 +0000] [3297] [INFO] Worker exiting (pid: 3297)
+ready to submit urls yet
+edit post post
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+new post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+you want upload an image here
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+you want upload an image here
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+you want upload an image here
+edit post post
+Not ready to submit urls yet
+[2018-04-13 00:57:11 +0000] [22341] [INFO] Booting worker with pid: 22341
+/usr/lib/python2.7/site-packages/requests/__init__.py:80: RequestsDependencyWarning: urllib3 (1.22) or chardet (2.2.1) doesn't match a supported version!
+  RequestsDependencyWarning)
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+edit post post
+Not ready to submit urls yet
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+you want upload an image here
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+new post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+edit post post
+edit post post
+edit post post
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+new post post
+Not ready to submit urls yet
+edit post post
+edit post post
+you want upload an image here
+edit post post
+you want upload an image here
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+new post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+new post post
+Not ready to submit urls yet
+new post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+new post post
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+edit post post
+you want upload an image here
+you want upload an image here
+you want upload an image here
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+validate
+post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+new post post
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+new post page
+Not ready to submit urls yet
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+validate
+page
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+validate
+page
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+1ddd48b53dcf55341e403a11d78458c9
+new post post
+f0cd671bc15bd7bf109dcaddfc27a1f7
+Not ready to submit urls yet
+edit post post
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+you want upload an image here
+Not ready to submit urls yet
+edit post post
+you want upload an image here
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+Not ready to submit urls yet
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+edit post post
+Not ready to submit urls yet
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+new post post
+edit post post
+Not ready to submit urls yet
+edit post post
+Not ready to submit urls yet
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+Not ready to submit urls yet
+Not ready to submit urls yet
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+validate
+post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+edit post post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+edit post post
+Not ready to submit urls yet
+edit post post
+edit post post
+Not rea[2018-07-04 00:53:51 +0000] [1056] [INFO] Starting gunicorn 19.7.1
+[2018-07-04 00:53:51 +0000] [1056] [INFO] Listening at: http://127.0.0.1:1080 (1056)
+[2018-07-04 00:53:51 +0000] [1056] [INFO] Using worker: sync
+[2018-07-04 00:53:51 +0000] [1061] [INFO] Booting worker with pid: 1061
+/usr/lib/python2.7/site-packages/requests/__init__.py:80: RequestsDependencyWarning: urllib3 (1.22) or chardet (2.2.1) doesn't match a supported version!
+  RequestsDependencyWarning)
+/root/MeYouBlog-master/app/OctBlog/config.py
+/root/MeYouBlog-master/app
+edit post post
+edit post post
+Not ready to submit urls yet
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+validate
+post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+validate
+post
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+f0cd671bc15bd7bf109dcaddfc27a1f7
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870414e041953515786cbd1e0
+1ddd48b53dcf55341e403a11d78458c9
+054912a870[2018-09-02 08:57:08 +0000] [1221] [INFO] Starting gunicorn 19.7.1
+[2018-09-02 08:57:08 +0000] [1221] [INFO] Listening at: http://127.0.0.1:1080 (1221)
+[2018-09-02 08:57:08 +0000] [1221] [INFO] Using worker: sync
+[2018-09-02 08:57:08 +0000] [1226] [INFO] Booting worker with pid: 1226
+/usr/lib/python2.7/site-packages/requests/__init__.py:80: RequestsDependencyWarning: urllib3 (1.22) or chardet (2.2.1) doesn't match a supported version!
+  RequestsDependencyWarning)
+[2018-09-02 09:00:43 +0000] [1221] [INFO] Handling signal: term
+[2018-09-02 09:00:43 +0000] [1226] [INFO] Worker exiting (pid: 1226)
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+[2018-09-02 09:00:44 +0000] [1221] [INFO] Shutting down: Master
+[2018-09-02 09:03:12 +0000] [1342] [INFO] Starting gunicorn 19.7.1
+[2018-09-02 09:03:12 +0000] [1342] [INFO] Listening at: http://127.0.0.1:1080 (1342)
+[2018-09-02 09:03:12 +0000] [1342] [INFO] Using worker: sync
+[2018-09-02 09:03:12 +0000] [1347] [INFO] Booting worker with pid: 1347
+/usr/lib/python2.7/site-packages/requests/__init__.py:80: RequestsDependencyWarning: urllib3 (1.22) or chardet (2.2.1) doesn't match a supported version!
+  RequestsDependencyWarning)
+[2018-09-02 09:03:12 +0000] [1347] [ERROR] invalid syntax (<string>, line 1)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 135, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/usr/lib/python2.7/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/lib/python2.7/site-packages/gunicorn/util.py", line 364, in import_app
+    app = eval(obj, vars(mod))
+  File "<string>", line 1
+    app　
+       ^
+SyntaxError: invalid syntax
+[2018-09-02 09:03:12 +0000] [1347] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/gunicorn/arbiter.py", line 578, in spawn_worker
+    worker.init_process()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/usr/lib/python2.7/site-packages/gunicorn/workers/base.py", line 148, in load_wsgi
+    self.reloader.add_extra_file(exc_val.filename)
+AttributeError: 'NoneType' object has no attribute 'add_extra_file'
+[2018-09-02 09:03:12 +0000] [1347] [INFO] Worker exiting (pid: 1347)
+/root/MeYouBlog-master/app/OctBlog/config.pyc
+/root/MeYouBlog-master/app
+[2018-09-02 09:03:13 +0000] [1342] [INFO] Shutting down: Master
+[2018-09-02 09:03:13 +0000] [1342] [INFO] Reason: Worker failed to boot.
